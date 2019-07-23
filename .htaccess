@@ -1,0 +1,53 @@
+#####################UNIVERSALHTACCESSPROTECTION#####################
+
+# [SITE: figamecars.com]
+# [MODULES: GLOBAL,VERSION,CUSTOM]
+
+# [GLOBAL]
+RewriteEngine On
+RewriteBase /
+# [/GLOBAL]
+
+# [VERSION]
+<Files ~ "\.\d+\.min\.(css|js)$">
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.+)\.(\d+)\.min\.(css|js)$ $1.min.$3
+</Files>
+
+<Files ~ "^\w+\.min\.(css|js)$">
+	RewriteCond "%{HTTP:Accept-encoding}" "gzip"
+	RewriteCond "%{REQUEST_FILENAME}\.gz" -f
+	RewriteRule ^(.+)$ $1.gz
+</Files>
+
+RewriteRule "\.min\.css\.gz$" "-" [T=text/css,E=no-gzip:1]
+RewriteRule "\.min\.js\.gz$" "-" [T=application/javascript,E=no-gzip:1]
+
+<FilesMatch "\.(js|css)\.gz$">
+	Header append Content-Encoding gzip
+	Header append Vary Accept-Encoding
+</FilesMatch>
+# [/VERSION]
+
+# [CUSTOM]
+
+Options All -Indexes
+DirectoryIndex index.html
+AddHandler application/x-httpd-php .html
+
+<Files "*.inc.ams">
+	Require all denied
+</Files>
+
+<Files "cron-*">
+	Require all denied
+</Files>
+
+<Files "daemon-*">
+	Require all denied
+</Files>
+
+# [/CUSTOM]
+
+#####################/UNIVERSALHTACCESSPROTECTION#####################
+
