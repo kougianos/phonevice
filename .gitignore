@@ -1,3 +1,3 @@
 # Ignore smarty cache and template folders
-smarty/cache/
-smarty/templates/
+smarty/cache/*
+smarty/templates_c/*
