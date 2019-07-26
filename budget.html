@@ -1,0 +1,10 @@
+<?php
+
+// Basic configuration
+require_once("./services/configuration.php");
+
+var_dump($_SESSION);
+var_dump($_REQUEST);
+
+$smarty->display('budget.html', $_action);
+

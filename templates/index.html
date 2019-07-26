@@ -2,7 +2,7 @@
 
 <body>
 
-	<div class="jumbotron jumbotron-fluid white bluebg jumbotronCustomPadding">
+	<div class="jumbotron jumbotron-fluid white bluebg jumbotronCustom">
 		<div class="container-fluid text-center">
 			<div class="row">
 				<div class="col-sm-3 ">
@@ -23,7 +23,7 @@
 				</div>
 				<div class="col-sm-1"></div>
 				<div class="col-sm-3 ">
-					<a href="https://www...." class="redbutton">Sign Up/Log in</a>
+					<a href="login.html" class="redbutton">Sign Up/Log in</a>
 				</div>
 			</div>
 			<!--end of row-->
@@ -50,7 +50,13 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
 				<h4>This is your next smartphone.3 clicks away.</h4>
-				<a href="./budget.php" class="linkbutton">START NOW!</a>
+				<!-- <form href="budget.html" class="linkbutton">START NOW!</a>
+				<button type="submit" class="linkbutton">START NOW!</button> -->
+				<form action="budget.html" method="get">
+					<input type="hidden" name="action" value="hotels">
+					<!-- <button type="submit" class="btn linkbutton">START NOW!</button> -->
+					<input type="submit" class="btn btn-primary linkbutton" value="START NOW!">
+				</form>
 			</div>
 			<div class="col-sm-4 mainBannerHand">
 				<img src="images/handx.png">

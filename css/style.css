@@ -1,3 +1,5 @@
+/* index.html */
+
 body {
 	margin: 0px;
 	padding: 0px;
@@ -5,25 +7,21 @@ body {
 	font-family: "Lato"Montserrat;
 }
 
-/* unvisited link */
 a:link {
 	text-decoration: none;
 	color: white;
 }
 
-/* visited link */
 a:visited {
 	text-decoration: none;
 	color: white;
 }
 
-/* mouse over link */
 a:hover {
 	text-decoration: none;
 	color: white;
 }
 
-/* selected link */
 a:active {
 	text-decoration: none;
 	color: white;
@@ -34,9 +32,7 @@ a:active {
 }
 
 .bluebg {
-	/*home*/
 	background-image: linear-gradient(to right, #89e1ed, #47a5be);
-	/*background-color: #98d5eb;*/
 }
 
 .white {
@@ -55,7 +51,7 @@ a:active {
 }
 
 .linkbutton {
-	/* background-color: #f44336;*/
+	border: none;
 	background-image: linear-gradient(to right, #ffcd6b, #e9775f);
 	color: white;
 	padding: 10px 20px;
@@ -67,16 +63,203 @@ a:active {
 	margin-bottom: 10%
 }
 
+.jumbotronCustom {
+	padding-top: 1%;
+	padding-bottom: 0%;
+	margin-bottom: 0;
+}
 
-/*---------------------------------------------------------------------------------------------*/
+.searchBar input.form-control {
+	background: rgba(0, 0, 0, 0.0);
+	border-color: white;
+}
+
+.searchBar div.input-group-append>button {
+	background: rgba(0, 0, 0, 0.0);
+	border-color: white;
+	color: white;
+}
+
+.mainBanner {
+	padding-top: 5%;
+	width: 100%
+}
+
+.mainBanner .mainBannerHand {
+	max-height: 400px;
+}
+
+.mainBanner .mainBannerHand img {
+	object-fit: scale-down;
+	height: inherit;
+	width: inherit;
+	max-height: 400px;
+}
+
+.secondaryBanner {
+	padding-left: 10%;
+	padding-right: 10%
+}
+
+footer {
+	background: linear-gradient(to right, #89e1ed, #47a5be);
+	color: white;
+}
+
+div.container-fluid.text-center.blue {
+	padding-bottom: 40px;
+	padding-top: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------- */
+/* budget.html */
+
 .bluebg2 {
-	/*toolbar*/
 	background-image: linear-gradient(to right, #004ef7 0%, #019dff 20%, #0543b2 100%);
+	width: 100%;
 }
 
 .caption {
 	padding-top: 5%;
-	font-family: "Actor"Lato Montserrat;
+	font-family: "Actor";
 	font-weight: 100;
 	font-size: 20px;
 }
@@ -130,7 +313,6 @@ a:active {
 }
 
 .linkbutton2 {
-	/* background-color: #f44336;*/
 	background-image: linear-gradient(to right, #ffcd6b, #e9775f);
 	color: white;
 	padding: 10px 20px;
@@ -145,44 +327,78 @@ a:active {
 	margin: 0px 0px 0px 0px;
 }
 
-.jumbotronCustomPadding {
-	padding-top: 1%;
-	padding-bottom: 0%;
+.budgetLogo {
+	padding-top: 10px;
+	margin-left: 8%;
+	margin-right: 4%;
+	padding-left: 20px;
 }
 
-.searchBar input.form-control {
-	background: rgba(0, 0, 0, 0.0);
-	border-color: white;
+.budgetLink {
+	padding-top: 15px;
+	margin-left: 3%;
+	margin-right: 3%;
+	padding-left: 20px;
 }
 
-.searchBar div.input-group-append > button {
-	background: rgba(0, 0, 0, 0.0);
-	border-color: white;
-	color: white;
+.budgetLink>div {
+	background-color: #7BB1E1;
 }
 
-.mainBanner {
+.budgetSearch {
+	padding-top: 16px;
+	margin-left: 3%;
+	margin-right: 1%;
+	padding-left: 20px;
+}
+
+.budgetMarket {
+	padding-top: 16px;
+	margin-left: 1%;
+	margin-right: 1%;
+	padding-left: 20px;
+}
+
+.budgetUser {
+	padding-top: 16px;
+	margin-left: 3%;
+	margin-right: 3%;
+	padding-left: 20px;
+}
+
+.budgetMainContent {
 	padding-top: 5%;
-	width: 100%
+	width: 100%;
 }
 
-.mainBanner .mainBannerHand {
-	max-height: 400px;
+.budgetMainContent>div:nth-child(2) {
+	height: 250px;
 }
 
-.mainBanner .mainBannerHand img {
+.budgetMainContent>div:nth-child(2)>img {
 	object-fit: scale-down;
 	height: inherit;
 	width: inherit;
-	max-height: 400px;
+	min-height: 100%;
 }
 
-.secondaryBanner {
-	padding-left: 10%;
-	padding-right: 10%
+.budgetMainContent>div:nth-child(3) {
+	margin-left: 80px;
 }
 
-footer {
-	background: linear-gradient(to right, #89e1ed, #47a5be);
-	color: white;
+.budgetMainContent>div:nth-child(3) div.column.no-right-pad-mar {
+	height: 250px;
+}
+
+.budgetMainContent>div:nth-child(3) div.column.no-left-pad-mar {
+	height: 250px;
+}
+
+.budgetMainContent>div:nth-child(3) div.container.pmprice div:first-child>img {
+	height: 10px;
+}
+
+.budgetMainContent>div:nth-child(3) div.container.pmprice div:not(:first-child)>img {
+	height: 10px;
+	display: none;
 }
