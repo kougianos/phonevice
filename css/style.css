@@ -1,10 +1,18 @@
 /* index.html */
+html {
+	height: 100%;
+}
 
 body {
 	margin: 0px;
 	padding: 0px;
 	width: 100%;
 	font-family: "Lato"Montserrat;
+}
+
+footer {
+	background: linear-gradient(to right, #89e1ed, #47a5be);
+	color: white;
 }
 
 a:link {
@@ -110,142 +118,6 @@ div.container-fluid.text-center.blue {
 	padding-bottom: 40px;
 	padding-top: 40px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -401,4 +273,63 @@ div.container-fluid.text-center.blue {
 .budgetMainContent>div:nth-child(3) div.container.pmprice div:not(:first-child)>img {
 	height: 10px;
 	display: none;
+}
+
+
+/*---------------------------------------------------------------------------------------------*/
+
+.singin_body {
+	height: 100%;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-ms-flex-align: center;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
+
+}
+
+.form-signin {
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.form-signin .checkbox {
+	font-weight: 400;
+}
+
+.form-signin .form-control {
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+
+.form-signin input[type="email"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.a2:hover {
+	text-decoration: underline;
 }
