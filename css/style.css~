@@ -1,0 +1,188 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	font-family: "Lato" Montserrat;
+}
+
+/* unvisited link */
+a:link {
+	text-decoration: none;
+	color: white;
+}
+
+/* visited link */
+a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+/* mouse over link */
+a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+/* selected link */
+a:active {
+	text-decoration: none;
+	color: white;
+}
+
+.blue {
+	color: #4892bd;
+}
+
+.bluebg {
+	/*home*/
+	background-image: linear-gradient(to right, #89e1ed, #47a5be);
+	/*background-color: #98d5eb;*/
+}
+
+.white {
+	color: white;
+}
+
+.redbutton {
+	background-color: #f64e5d;
+	color: white;
+	padding: 14px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	box-shadow: 3px 3px 3px 1px #888888;
+}
+
+.linkbutton {
+	/* background-color: #f44336;*/
+	background-image: linear-gradient(to right, #ffcd6b, #e9775f);
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin-top: 10%;
+	margin-bottom: 10%
+}
+
+
+/*---------------------------------------------------------------------------------------------*/
+.bluebg2 {
+	/*toolbar*/
+	background-image: linear-gradient(to right, #004ef7 0%, #019dff 20%, #0543b2 100%);
+}
+
+.caption {
+	padding-top: 5%;
+	font-family: "Actor"Lato Montserrat;
+	font-weight: 100;
+	font-size: 20px;
+}
+
+.inp {
+	font-family: "Lato"Montserrat;
+	font-size: 20px;
+	border: none;
+	border-bottom: 1px solid #000;
+	width: 100px;
+	text-align: center;
+	/*margin: 40% 40% 40% 10%;*/
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.pmprice {
+	font-family: "Lato"Montserrat;
+	font-size: 15px;
+	text-align: left;
+	/*margin: 40% 40% 40% 10%;*/
+	/*margin: 40% 10% 40% 10%;*/
+	margin-top: 70px;
+	margin-bottom: 100px;
+}
+
+.no-right-pad-mar {
+	padding-right: 0px;
+	margin-right: 0px;
+}
+
+.no-left-pad-mar {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+.blacktext {
+	color: #000;
+}
+
+.blacktext:hover {
+	cursor: pointer;
+}
+
+.graytext {
+	color: #ccc;
+}
+
+.graytext:hover {
+	cursor: pointer;
+}
+
+.linkbutton2 {
+	/* background-color: #f44336;*/
+	background-image: linear-gradient(to right, #ffcd6b, #e9775f);
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin: 5% 5% 5% 5%;
+}
+
+.row {
+	margin: 0px 0px 0px 0px;
+}
+
+.jumbotronCustomPadding {
+	padding-top: 1%;
+	padding-bottom: 0%;
+}
+
+.searchBar input.form-control {
+	background: rgba(0, 0, 0, 0.0);
+	border-color: white;
+}
+
+.searchBar div.input-group-append > button {
+	background: rgba(0, 0, 0, 0.0);
+	border-color: white;
+	color: white;
+}
+
+.mainBanner {
+	padding-top: 5%;
+	width: 100%
+}
+
+.mainBanner .mainBannerHand {
+	max-height: 400px;
+}
+
+.mainBanner .mainBannerHand img {
+	object-fit: scale-down;
+	height: inherit;
+	width: inherit;
+	max-height: 400px;
+}
+
+.secondaryBanner {
+	padding-left: 10%;
+	padding-right: 10%
+}
+
+footer {
+	background: linear-gradient(to right, #89e1ed, #47a5be);
+	color: white;
+}
