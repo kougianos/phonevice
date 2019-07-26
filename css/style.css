@@ -1,183 +1,188 @@
-/* DEFAULT VALUES */
 body {
-	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 700;
-}
-
-header.masthead {
-	position: relative;
-	/*background: url("../img/bg-masthead.jpg") no-repeat center center;*/
-	background: linear-gradient(to right, #a3e3f2, #51a8ba);
-	background-size: cover;
-	padding-top: 8rem;
-	padding-bottom: 8rem;
-	min-height: 550px;
-}
-
-header.masthead .overlay {
-	position: absolute;
-	height: 100%;
+	margin: 0px;
+	padding: 0px;
 	width: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0.3;
+	font-family: "Lato"Montserrat;
 }
 
-header.masthead h1 {
-	font-size: 2rem;
-}
-
-@media (min-width:768px) {
-	header.masthead {
-		padding-top: 12rem;
-		padding-bottom: 12rem;
-	}
-
-	header.masthead h1 {
-		font-size: 3rem;
-	}
-
-}
-
-.showcase .showcase-text {
-	padding: 3rem;
-}
-
-.showcase .showcase-img {
-	min-height: 30rem;
-	background-size: cover;
-}
-
-@media (min-width:768px) {
-	.showcase .showcase-text {
-		padding: 7rem;
-	}
-
-}
-
-.features-icons {
-	padding-top: 7rem;
-	padding-bottom: 7rem;
-}
-
-.testimonials {
-	padding-top: 7rem;
-	padding-bottom: 7rem;
-}
-
-.testimonials .testimonial-item {
-	max-width: 18rem;
-}
-
-.testimonials .testimonial-item img {
-	max-width: 12rem;
-	-webkit-box-shadow: 0px 5px 5px 0px #adb5bd;
-	box-shadow: 0px 5px 5px 0px #adb5bd;
-}
-
-.call-to-action {
-	position: relative;
-	background-color: #343a40;
-	/*background: url("../img/bg-masthead.jpg") no-repeat center center;*/
-	background-size: cover;
-	padding-top: 7rem;
-	padding-bottom: 7rem;
-}
-
-.call-to-action .overlay {
-	position: absolute;
-	background-color: #212529;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0.3;
-}
-
-footer.footer {
-	padding-top: 4rem;
-	padding-bottom: 4rem;
-}
-
-
-/* LANDING PAGE */
-
-nav {
-	background: linear-gradient(to right, #a3e3f2, #51a8ba);
-}
-
-nav > .container > a.btn {
-	background-color: #f94d5d;
-    border-color: #f94d5d;
-    box-shadow: 3px 2px 3px 1px #888;
-}
-
-header.masthead h2 {
-	font-weight: 400;
-}
-
-div.navbar2 {
-	justify-content: space-around;
-	background: linear-gradient(to right, #a3e3f2, #51a8ba);
-	margin: 0;
-}
-
-div.navbar2 a {
+/* unvisited link */
+a:link {
+	text-decoration: none;
 	color: white;
-	text-shadow: 2px 2px 4px #000000;
-	min-height: 60px;
-	transition: all 0.5s;
 }
 
-div.navbar2 a:hover {
-	font-size: 1.75rem;
+/* visited link */
+a:visited {
+	text-decoration: none;
+	color: white;
 }
 
-div.navbar2 .shoppingCart {
-	width: 30px;
-	fill: white;
-	-webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
- 	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
- 	transition: all 0.5s;
+/* mouse over link */
+a:hover {
+	text-decoration: none;
+	color: white;
 }
 
-div.navbar2 .shoppingCart:hover {
-	width: 40px;
+/* selected link */
+a:active {
+	text-decoration: none;
+	color: white;
 }
 
-.mainButton {
+.blue {
+	color: #4892bd;
+}
+
+.bluebg {
+	/*home*/
+	background-image: linear-gradient(to right, #89e1ed, #47a5be);
+	/*background-color: #98d5eb;*/
+}
+
+.white {
+	color: white;
+}
+
+.redbutton {
+	background-color: #f64e5d;
+	color: white;
+	padding: 14px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	box-shadow: 3px 3px 3px 1px #888888;
+}
+
+.linkbutton {
+	/* background-color: #f44336;*/
+	background-image: linear-gradient(to right, #ffcd6b, #e9775f);
+	color: white;
 	padding: 10px 20px;
-	background: linear-gradient(to top right, #fdcf6e, #f86d6a);
-	text-shadow: 2px 2px 4px #000000;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin-top: 10%;
+	margin-bottom: 10%
+}
+
+
+/*---------------------------------------------------------------------------------------------*/
+.bluebg2 {
+	/*toolbar*/
+	background-image: linear-gradient(to right, #004ef7 0%, #019dff 20%, #0543b2 100%);
+}
+
+.caption {
+	padding-top: 5%;
+	font-family: "Actor"Lato Montserrat;
+	font-weight: 100;
+	font-size: 20px;
+}
+
+.inp {
+	font-family: "Lato"Montserrat;
+	font-size: 20px;
 	border: none;
-	transition: all 0.3s;
+	border-bottom: 1px solid #000;
+	width: 100px;
+	text-align: center;
+	/*margin: 40% 40% 40% 10%;*/
+	margin-top: 100px;
+	margin-bottom: 100px;
 }
 
-.mainButton:hover {
-	padding: 15px 30px;
+.pmprice {
+	font-family: "Lato"Montserrat;
+	font-size: 15px;
+	text-align: left;
+	/*margin: 40% 40% 40% 10%;*/
+	/*margin: 40% 10% 40% 10%;*/
+	margin-top: 70px;
+	margin-bottom: 100px;
 }
 
-.smartphoneIcon {
-	width: 30px;
-	margin-right: 5px;
-	margin-left: -10px;
- 	filter: drop-shadow( 1px 1px 4px rgba(0, 0, 0, .7));
+.no-right-pad-mar {
+	padding-right: 0px;
+	margin-right: 0px;
 }
 
-.text-center-flex {
-	justify-content: center;
+.no-left-pad-mar {
+	padding-left: 0px;
+	margin-left: 0px;
 }
 
-section.features-icons .features-icons-item {
-	color: #2198b1;
-	font-weight: normal;
-	font-size: 1.25rem;
+.blacktext {
+	color: #000;
 }
 
-.features-icons > .container {
-	max-width: 100%;
+.blacktext:hover {
+	cursor: pointer;
+}
+
+.graytext {
+	color: #ccc;
+}
+
+.graytext:hover {
+	cursor: pointer;
+}
+
+.linkbutton2 {
+	/* background-color: #f44336;*/
+	background-image: linear-gradient(to right, #ffcd6b, #e9775f);
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin: 5% 5% 5% 5%;
+}
+
+.row {
+	margin: 0px 0px 0px 0px;
+}
+
+.jumbotronCustomPadding {
+	padding-top: 1%;
+	padding-bottom: 0%;
+}
+
+.searchBar input.form-control {
+	background: rgba(0, 0, 0, 0.0);
+	border-color: white;
+}
+
+.searchBar div.input-group-append > button {
+	background: rgba(0, 0, 0, 0.0);
+	border-color: white;
+	color: white;
+}
+
+.mainBanner {
+	padding-top: 5%;
+	width: 100%
+}
+
+.mainBanner .mainBannerHand {
+	max-height: 400px;
+}
+
+.mainBanner .mainBannerHand img {
+	object-fit: scale-down;
+	height: inherit;
+	width: inherit;
+	max-height: 400px;
+}
+
+.secondaryBanner {
+	padding-left: 10%;
+	padding-right: 10%
+}
+
+footer {
+	background: linear-gradient(to right, #89e1ed, #47a5be);
+	color: white;
 }
