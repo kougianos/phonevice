@@ -66,8 +66,9 @@
 				<div class="column no-right-pad-mar">
 					<form id="form" class="no-right-pad-mar" method="post"
 						action="./submit_budget.php">
-						<input type="text" name="budget" class="inp no-right-pad-mar"
-							placeholder="$200" value="$200">
+						<span class="input-caption">$</span>
+						<input type="number" min="0" step="1" name="budget" class="inp no-right-pad-mar"
+							placeholder="280" value="">
 						<input type="hidden" name="range" id="range" value="10">
 					</form>
 				</div>

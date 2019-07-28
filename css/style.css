@@ -136,12 +136,23 @@ div.container-fluid.text-center.blue {
 	font-size: 20px;
 }
 
+.input-caption{
+	font-family: "Lato"Montserrat;
+	font-size: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .inp {
 	font-family: "Lato"Montserrat;
 	font-size: 20px;
 	border: none;
 	border-bottom: 1px solid #000;
-	width: 100px;
+	width: 80px;
 	text-align: center;
 	/*margin: 40% 40% 40% 10%;*/
 	margin-top: 100px;
