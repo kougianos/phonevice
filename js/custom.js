@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+	// Budget page implementation - +/-$10	+/-$20	+/-$50
 	if (document.getElementById('budget_page')) {
 
 		document.getElementById("+/-$10").onclick = function () {
@@ -62,5 +63,22 @@ $(document).ready(function () {
 		}
 
 	}
-	
+
+	// Click on feature image implementation
+	$(document).on("click", ".featureImage", function () {
+
+		if ($(this).hasClass("featureImageSelected")) {
+
+			$(this).removeClass("featureImageSelected");
+			$(this).next().prop("checked", false);
+
+		} else {
+
+			$(this).addClass("featureImageSelected");
+			$(this).next().prop("checked", true);
+			
+		}
+
+	});
+
 });
