@@ -5,14 +5,18 @@ html {
 
 body {
 	margin: 0px;
-	padding: 0px;
+	padding-bottom: 300px;
 	width: 100%;
 	font-family: "Lato"Montserrat;
+	min-height: 100%;
+	position: relative;
 }
 
 footer {
 	background: linear-gradient(to right, #89e1ed, #47a5be);
 	color: white;
+	position: absolute;
+	bottom: 0;
 }
 
 a:link {
@@ -136,15 +140,15 @@ div.container-fluid.text-center.blue {
 	font-size: 20px;
 }
 
-.input-caption{
+.input-caption {
 	font-family: "Lato"Montserrat;
 	font-size: 20px;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 .inp {
