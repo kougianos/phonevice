@@ -2,88 +2,92 @@
 
 <body>
 
-	<div class=" bluebg2 white taxt-center row">
+	<div id="budget_page">
 
-		<a href="index.html" class="budgetLogo">
-			<h3>PhoneVice</h3>
-		</a>
+		<div class=" bluebg2 white taxt-center row">
 
-		<div class="budgetLink" >
-			<a href="index.html">HOME</a>
-		</div>
-
-		<div class="dropdown show budgetLink">
-			<a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false">
-				MARKET
+			<a href="index.html" class="budgetLogo">
+				<h3>PhoneVice</h3>
 			</a>
 
-			<div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">SMARTPHONES</a>
-				<a class="dropdown-item" href="#">ACCESSORIES</a>
-				<a class="dropdown-item" href="#">COURSES</a>
+			<div class="budgetLink" >
+				<a href="index.html">HOME</a>
+			</div>
+
+			<div class="dropdown show budgetLink">
+				<a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					MARKET
+				</a>
+
+				<div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuLink">
+					<a class="dropdown-item" href="#">SMARTPHONES</a>
+					<a class="dropdown-item" href="#">ACCESSORIES</a>
+					<a class="dropdown-item" href="#">COURSES</a>
+				</div>
+			</div>
+
+			<div class="budgetLink">
+				<a href="#">TOOL</a>
+			</div>
+
+			<div class="budgetLink">
+				<a href="#">FORUM</a>
+			</div>
+
+
+			<div class="budgetSearch">
+				<a href="#"><i class="fa fa-search"></i></a>
+			</div>
+
+			<div class="budgetMarket">
+				<a href="#"><i class="fa fa-shopping-cart"></i></a>
+			</div>
+
+
+
+			<div class="budgetUser">
+				Hello, image, user name
+				<a href="#"><i class="fa fa-bars "></i></a>
 			</div>
 		</div>
 
-		<div class="budgetLink">
-			<a href="#">TOOL</a>
+		<div class="text-center caption"> 
+			Let us know how much you're going to spend
 		</div>
 
-		<div class="budgetLink">
-			<a href="#">FORUM</a>
-		</div>
+		<div class="row budgetMainContent">
+			<div class="col-sm-3"></div>
 
+			<div class="col-sm-3">
+				<img src="img/cash.png">
+			</div>
 
-		<div class="budgetSearch">
-			<a href="#"><i class="fa fa-search"></i></a>
-		</div>
-
-		<div class="budgetMarket">
-			<a href="#"><i class="fa fa-shopping-cart"></i></a>
-		</div>
-
-
-
-		<div class="budgetUser">
-			Hello, image, user name
-			<a href="#"><i class="fa fa-bars "></i></a>
-		</div>
-	</div>
-
-	<div class="text-center caption"> 
-		Let us know how much you're going to spend
-	</div>
-
-	<div class="row budgetMainContent">
-		<div class="col-sm-3"></div>
-
-		<div class="col-sm-3">
-			<img src="img/cash.png">
-		</div>
-
-		<div class="col">
-			<div class="row">
-				<div class="column no-right-pad-mar">
-					<form id="form" class="no-right-pad-mar" method="post"
-						action="features.html">
-						<span class="input-caption">$</span>
-						<input type="number" min="0" step="10" name="budget" class="inp no-right-pad-mar"
-							placeholder="" value="280">
-						<input type="hidden" name="range" id="range" value="10">
-					</form>
-				</div>
-				<div class="column">
-					<div class="container pmprice">
-						<div id="+/-$10" class="blacktext">+/-$10 <img src="./img/tick.png"></div>
-						<div id="+/-$20" class="graytext">+/-$20 <img src="./img/tick.png"></div>
-						<div id="+/-$50" class="graytext">+/-$50 <img src="./img/tick.png"></div>
+			<div class="col">
+				<div class="row">
+					<div class="column no-right-pad-mar">
+						<form id="form" class="no-right-pad-mar" method="get"
+							action="features.html">
+							<span class="input-caption">$</span>
+							<input type="number" min="0" step="10" name="budget" class="inp no-right-pad-mar"
+								placeholder="" value="280">
+							<input type="hidden" name="range" id="range" value="10">
+						</form>
+					</div>
+					<div class="column">
+						<div class="container pmprice">
+							<div id="+/-$10" class="blacktext">+/-$10 <img src="./img/tick.png"></div>
+							<div id="+/-$20" class="graytext">+/-$20 <img src="./img/tick.png"></div>
+							<div id="+/-$50" class="graytext">+/-$50 <img src="./img/tick.png"></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="col-sm-12 text-center">
-			<a href=# class="linkbutton2 white" id="submit"> Next >> </a>
+			<div class="col-sm-12 text-center">
+				<a href=# class="linkbutton2 white" id="submit"> Next >> </a>
+			</div>
+
 		</div>
 
 	</div>
