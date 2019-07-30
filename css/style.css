@@ -12,13 +12,6 @@ body {
 	position: relative;
 }
 
-footer {
-	background: linear-gradient(to right, #89e1ed, #47a5be);
-	color: white;
-	position: absolute;
-	bottom: 0;
-}
-
 a:link {
 	text-decoration: none;
 	color: white;
@@ -123,6 +116,33 @@ div.container-fluid.text-center.blue {
 	padding-top: 40px;
 }
 
+/* ----------------------------------------------------------------------- */
+/*navbar_v1.html*/
+.Logo {
+	padding-left: 7%;
+	padding-right: 5%;
+	font-size: 30px;
+}
+.navbarText {
+	font-family: "Arial";
+	font-weight: 100;
+	font-size: 20px;
+}
+
+.navbarSearchBox{
+	margin-left: 5px !important;
+	margin-right: 5px !important;
+	width: 90%;
+}
+
+.navbarItem{
+	margin-left: 10px !important;
+}
+
+/*navbar_v2.html*/
+.customNavbar{
+	padding-top: 1%;
+}
 
 
 /* ----------------------------------------------------------------------- */
