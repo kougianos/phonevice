@@ -66,91 +66,26 @@
 		</div>
 	</nav>
 
-	<!-- Main Content -->
 	<div class="container text-center">
 		<div class="row main-part">
 			<div class="offset-md-1 col-md-10 py-md-5 pt-4 d-flex flex-column justify-content-between">
 				<p>Select as many optionas as you like.</p>
-				<form id="hotelFiltersForm" action="usage.html" method="get">
+				<form id="featuresForm" action="usage.html" method="get">
 
 					<div class="row overflow-scroll scrolling-options form-group">
 
+						{foreach $INITIALFEATURES as $F}
 						<div class="col-md-4 my-md-5">
 
 							<p class="mb-1 mb-lg-0 line-height-x" data-toggle="tooltip" data-placement="top"
-								title="Short Description about this option">Dual Sim</p>
+								title="Short Description about this option">{$F}</p>
 
-							<img class="featureImage" src="img/3g4g.png" alt="sims" class="w-50">
+							<img id="{$F}" class="featureImage" src="img/3g4g.png" alt="{$F}" class="w-50">
 
-							<input class="d-none" type="checkbox" name="features[]" value="dualsim">
-
-						</div>
-
-						<div class="col-md-4 my-md-5">
-
-							<p class="mb-1 mb-lg-0 line-height-x" data-toggle="tooltip" data-placement="top"
-								title="Short Description about this option">Dual Sim</p>
-
-							<img class="featureImage" src="img/3g4g.png" alt="sims" class="w-50">
-
-							<input class="d-none" type="checkbox" name="features[]" value="test">
+							<input class="d-none" type="checkbox" name="features[]" value="{$F}">
 
 						</div>
-
-						<div class="col-md-4 my-md-5">
-
-							<p class="mb-1 mb-lg-0 line-height-x" data-toggle="tooltip" data-placement="top"
-								title="Short Description about this option">Dual Sim</p>
-
-							<img class="featureImage" src="img/3g4g.png" alt="sims" class="w-50">
-
-							<input class="d-none" type="checkbox" name="features[]" value="test">
-
-						</div>
-
-						<div class="col-md-4 my-md-5">
-
-							<p class="mb-1 mb-lg-0 line-height-x" data-toggle="tooltip" data-placement="top"
-								title="Short Description about this option">Dual Sim</p>
-
-							<img class="featureImage" src="img/3g4g.png" alt="sims" class="w-50">
-
-							<input class="d-none" type="checkbox" name="features[]" value="test">
-
-						</div>
-
-						<div class="col-md-4 my-md-5">
-
-							<p class="mb-1 mb-lg-0 line-height-x" data-toggle="tooltip" data-placement="top"
-								title="Short Description about this option">Dual Sim</p>
-
-							<img class="featureImage" src="img/3g4g.png" alt="sims" class="w-50">
-
-							<input class="d-none" type="checkbox" name="features[]" value="test">
-
-						</div>
-
-						<div class="col-md-4 my-md-5">
-
-							<p class="mb-1 mb-lg-0 line-height-x" data-toggle="tooltip" data-placement="top"
-								title="Short Description about this option">Dual Sim</p>
-
-							<img class="featureImage" src="img/3g4g.png" alt="sims" class="w-50">
-
-							<input class="d-none" type="checkbox" name="features[]" value="test">
-
-						</div>
-
-						<div class="col-md-4 my-md-5">
-
-							<p class="mb-1 mb-lg-0 line-height-x" data-toggle="tooltip" data-placement="top"
-								title="Short Description about this option">Dual Sim</p>
-
-							<img class="featureImage" src="img/3g4g.png" alt="sims" class="w-50">
-
-							<input class="d-none" type="checkbox" name="features[]" value="test">
-
-						</div>
+						{/foreach}
 
 					</div>
 

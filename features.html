@@ -6,4 +6,8 @@ require_once("./services/configuration.php");
 // Tool step-1 implementation
 require_once("./services/tool-step-1.php");
 
+// Assign initial features on smarty
+if(isset($_SESSION['initial_features']) && sizeof($_SESSION['initial_features'])>0)
+	$smarty->assignByRef('INITIALFEATURES', $_SESSION['initial_features']);
+
 $smarty->display('features.html', $_action);

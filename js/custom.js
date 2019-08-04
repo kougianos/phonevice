@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+	// Enable tooltips
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
+
 	// Budget page implementation - +/-$10	+/-$20	+/-$50
 	if (document.getElementById('budget_page')) {
 
@@ -67,17 +72,63 @@ $(document).ready(function () {
 	// Click on feature image implementation
 	$(document).on("click", ".featureImage", function () {
 
+		// If feature is disabled then return
+		if ($(this).hasClass("featureDisabled"))
+			return;
+
+		// If feature is already selected then unselect it and vice versa
 		if ($(this).hasClass("featureImageSelected")) {
 
 			$(this).removeClass("featureImageSelected");
-			$(this).next().prop("checked", false);
+			$(this).next().prop("checked", false).trigger('change');
 
 		} else {
 
 			$(this).addClass("featureImageSelected");
-			$(this).next().prop("checked", true);
-			
+			$(this).next().prop("checked", true).trigger('change');
+
 		}
+
+	});
+
+	// Check features on the fly implementation
+	$('#featuresForm').on('change', null, function () {
+
+		// Serialize form inputs
+		var serializedForm = $('#featuresForm').serializeArray();
+
+		// Ajax check available features
+		$.ajax({
+
+			type: "POST",
+			timeout: 30000,
+			url: "ajax/features-check.html",
+			data: {
+				action: "features_check",
+				features: serializedForm
+			}
+
+		}).always(function (featuresCheckResponse) {
+
+			// If no feature is selected then make them all available and return. Same on error
+			if (featuresCheckResponse == "none-selected" || featuresCheckResponse == "error") {
+				$(".featureImage").removeClass("featureDisabled").next().attr("disabled", false);
+				return;
+			}
+
+			$.each(featuresCheckResponse, function (index, value) {
+
+				var featureImage = $('#' + value);
+
+				if (!(featureImage.hasClass("featureDisabled"))) {
+
+					featureImage.addClass("featureDisabled").next().attr("disabled", true);
+
+				}
+
+			});
+
+		});
 
 	});
 
