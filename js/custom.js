@@ -115,7 +115,7 @@ $(document).ready(function () {
 
 			// If no feature is selected then make them all available and return. Same on error
 			if (featuresCheckResponse == "none-selected" || featuresCheckResponse == "error") {
-				$(".featureImage").removeClass("featureDisabled").next().attr("disabled", false);
+				$(".featureImage").removeClass("featureDisabled").removeClass("featureTempDisabled").next().attr("disabled", false);
 				return;
 			}
 
