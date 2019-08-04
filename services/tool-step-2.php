@@ -16,6 +16,7 @@ if (isset($_GET['features'])) {
 
 		if (array_intersect($_GET['features'], $phone['available_features']) != $_GET['features'])
 			unset($_SESSION['phones'][$key]);
+			
 	}
 }
 

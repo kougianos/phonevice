@@ -73,7 +73,7 @@ $(document).ready(function () {
 	$(document).on("click", ".featureImage", function () {
 
 		// If feature is disabled then return
-		if ($(this).hasClass("featureDisabled"))
+		if ($(this).hasClass("featureDisabled") || $(this).hasClass("featureTempDisabled"))
 			return;
 
 		// If feature is already selected then unselect it and vice versa
@@ -97,6 +97,9 @@ $(document).ready(function () {
 		// Serialize form inputs
 		var serializedForm = $('#featuresForm').serializeArray();
 
+		// Temporarily disable form until ajax finishes
+		$(".featureImage").addClass("featureTempDisabled");
+
 		// Ajax check available features
 		$.ajax({
 
@@ -116,6 +119,10 @@ $(document).ready(function () {
 				return;
 			}
 
+			// Make all features available at each ajax call
+			$(".featureImage").removeClass("featureDisabled").removeClass("featureTempDisabled").next().attr("disabled", false);
+
+			// Loop ajax response and disable unavailable features
 			$.each(featuresCheckResponse, function (index, value) {
 
 				var featureImage = $('#' + value);
