@@ -26,6 +26,10 @@ while(1) {
 	// Loop phones
 	foreach($_SESSION['phones'] as $key => $phone) {
 
+		// Discard phones with no benchmark
+		if(!isset($phone['benchmarks']['SLING_SHOT_ES_31']['Score']) || $phone['benchmarks']['SLING_SHOT_ES_31']['Score']=="Delisted")
+			unset($_SESSION['phones'][$key]);
+
 		// Keep phones that have min or max price in budget range
 		if(!(($phone['minPrice']>=($budget-$budgetRange) && $phone['minPrice']<=($budget+$budgetRange)) || ($phone['maxPrice']>=($budget-$budgetRange) && $phone['maxPrice']<=($budget+$budgetRange))))
 			unset($_SESSION['phones'][$key]);
@@ -55,7 +59,6 @@ $initialFeatures = array(
 
 );
 
-// Calculate initial features
 foreach($_SESSION['phones'] as $key => $phone) {
 
 	// Initialize available features empty array for each phone

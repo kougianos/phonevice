@@ -2,60 +2,16 @@
 
 <body>
 
+	{include file='navbar.html'}
+
 	<div class="jumbotron jumbotron-fluid white bluebg jumbotronCustom">
-		<div class="container-fluid text-center">
-			<div class="row">
-				<div class="col-sm-3 ">
-					<h3>PhoneVice</h3>
-				</div>
-				<div class="col-sm-1"></div>
-				<div class="col-sm-4 ">
-					<form class="searchBar" action="/action_page.php">
-						<div class="input-group mb-3">
-							<input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon2">
-							<div class="input-group-append">
-								<button class="btn btn-link" type="button">
-									<i class="fa fa-search"></i>
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="col-sm-1"></div>
-				<div class="col-sm-3 ">
-					<a href="login.html" class="redbutton">Sign Up/Log in</a>
-				</div>
-			</div>
-			<!--end of row-->
-			<div class="row">
-				<div class="col-sm-4 "></div>
-
-
-				<div class="col-sm-1">
-					<a href="https://www....">MARKET</a>
-				</div>
-				<div class="col-sm-2"></div>
-				<div class="col-sm-1">
-					<a href="https://www....">FORUM</a>
-				</div>
-
-
-				<div class="col-sm-4 "></div>
-			</div>
-			<!--end of row-->
-		</div>
-		<!--end of container-fluid text-center-->
 
 		<div class="row text-center mainBanner">
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
-				<h4>This is your next smartphone.3 clicks away.</h4>
-				<!-- <form href="budget.html" class="linkbutton">START NOW!</a>
-				<button type="submit" class="linkbutton">START NOW!</button> -->
+				<h4>This is your next smartphone. 3 clicks away.</h4>
 				<form action="budget.html" method="get">
-					<input type="hidden" name="action" value="hotels">
-					<!-- <button type="submit" class="btn linkbutton">START NOW!</button> -->
-					<input type="submit" class="btn btn-primary linkbutton" value="START NOW!">
+					<input type="submit" class="btn btn-danger btn-lg my-5" value="START NOW!">
 				</form>
 			</div>
 			<div class="col-sm-4 mainBannerHand">
@@ -66,7 +22,7 @@
 	</div>
 	<!--end of jumbtron-fluid-->
 
-	<div class="container-fluid text-center blue">
+	<div class="container-fluid text-center py-5 text-muted">
 		<div class="row secondaryBanner">
 			<div class="col-sm-4">
 				<h5><img src="img/phone.png">1000+ smartphones</h5>
@@ -86,4 +42,4 @@
 		</div>
 	</div>
 
-{include file='footer.html'}
+	{include file='footer.html'}

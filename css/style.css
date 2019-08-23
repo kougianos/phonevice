@@ -1,54 +1,48 @@
 /* index.html */
 html {
 	height: 100%;
+	width: 100%;
 }
 
 body {
 	margin: 0px;
-	padding-bottom: 300px;
 	width: 100%;
-	font-family: "Lato"Montserrat;
 	min-height: 100%;
-	position: relative;
+	display: flex;
+	flex-direction: column;
 }
 
 footer {
-	background: linear-gradient(to right, #89e1ed, #47a5be);
-	color: white;
-	position: absolute;
-	bottom: 0;
-}
-
-a:link {
-	text-decoration: none;
-	color: white;
-}
-
-a:visited {
-	text-decoration: none;
-	color: white;
-}
-
-a:hover {
-	text-decoration: none;
-	color: white;
-}
-
-a:active {
-	text-decoration: none;
-	color: white;
-}
-
-.blue {
-	color: #4892bd;
+	background-color: #4547fa;
 }
 
 .bluebg {
-	background-image: linear-gradient(to right, #89e1ed, #47a5be);
+	background-color: #4547fa;
 }
 
 .white {
 	color: white;
+}
+
+a {
+	outline: none;
+}
+
+.backButton, .nextButton {
+	width: 200px;
+	position: relative;
+}
+
+svg.leftArrow {
+	width: 25px;
+	position: absolute;
+	left: 10px;
+}
+
+svg.rightArrow {
+	width: 25px;
+	position: absolute;
+	right: 10px;
 }
 
 .redbutton {
@@ -79,6 +73,11 @@ a:active {
 	padding-top: 1%;
 	padding-bottom: 0%;
 	margin-bottom: 0;
+}
+
+.progressBar {
+	width: 100%;
+	max-width: 900px;
 }
 
 .searchBar input.form-control {
@@ -113,38 +112,35 @@ a:active {
 	padding-right: 10%
 }
 
-div.container-fluid.text-center.blue {
-	padding-bottom: 40px;
-	padding-top: 40px;
-}
-
 /* ----------------------------------------------------------------------- */
-/*navbar_v1.html*/
-.Logo {
-	padding-left: 7%;
-	padding-right: 5%;
-	font-size: 30px;
-}
-.navbarText {
-	font-family: "Arial";
-	font-weight: 100;
-	font-size: 20px;
+/*navbar.html*/
+
+nav.navbar {
+	background-color: #4547fa !important;
 }
 
-.navbarSearchBox{
-	margin-left: 5px !important;
-	margin-right: 5px !important;
-	width: 90%;
+nav a, nav a:hover {
+	color: white;
+	text-decoration: none;
 }
 
-.navbarItem{
-	margin-left: 10px !important;
+nav input[type="search"], nav input[type="search"]:active, nav input[type="search"]:focus {
+	background-color: inherit;
+	color: white;
+	border-color: inherit;
+	box-shadow: none;
 }
 
-/*navbar_v2.html*/
-.customNavbar{
-	padding-top: 1%;
+nav .navbar-nav .dropdown-menu {
+	position: absolute;
 }
+
+@media (max-width: 576px) {
+	nav .navbar-nav .col-sm-4:last-of-type .dropdown-menu {
+		left: -70px;
+	}
+}
+
 
 
 /* ----------------------------------------------------------------------- */
@@ -164,7 +160,7 @@ div.container-fluid.text-center.blue {
 
 .input-caption {
 	font-family: "Lato"Montserrat;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -175,24 +171,19 @@ input[type=number]::-webkit-outer-spin-button {
 
 .inp {
 	font-family: "Lato"Montserrat;
-	font-size: 20px;
+	font-size: 25px;
 	border: none;
 	border-bottom: 1px solid #000;
 	width: 80px;
 	text-align: center;
 	/*margin: 40% 40% 40% 10%;*/
-	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-top: 40px;
 }
 
 .pmprice {
 	font-family: "Lato"Montserrat;
-	font-size: 15px;
+	font-size: 25px;
 	text-align: left;
-	/*margin: 40% 40% 40% 10%;*/
-	/*margin: 40% 10% 40% 10%;*/
-	margin-top: 70px;
-	margin-bottom: 100px;
 }
 
 .no-right-pad-mar {
@@ -233,14 +224,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .row {
-	margin: 0px 0px 0px 0px;
+	margin: 0;
 }
 
 .budgetLogo {
-	padding-top: 10px;
-	margin-left: 8%;
-	margin-right: 4%;
-	padding-left: 20px;
+	max-width: 100%;
 }
 
 .budgetLink {
@@ -280,35 +268,12 @@ input[type=number]::-webkit-outer-spin-button {
 	width: 100%;
 }
 
-.budgetMainContent>div:nth-child(2) {
-	height: 250px;
+.budgetMainContent>div:nth-child(2) div.container.pmprice div:first-child>img {
+	height: 20px;
 }
 
-.budgetMainContent>div:nth-child(2)>img {
-	object-fit: scale-down;
-	height: inherit;
-	width: inherit;
-	min-height: 100%;
-}
-
-.budgetMainContent>div:nth-child(3) {
-	margin-left: 80px;
-}
-
-.budgetMainContent>div:nth-child(3) div.column.no-right-pad-mar {
-	height: 250px;
-}
-
-.budgetMainContent>div:nth-child(3) div.column.no-left-pad-mar {
-	height: 250px;
-}
-
-.budgetMainContent>div:nth-child(3) div.container.pmprice div:first-child>img {
-	height: 10px;
-}
-
-.budgetMainContent>div:nth-child(3) div.container.pmprice div:not(:first-child)>img {
-	height: 10px;
+.budgetMainContent>div:nth-child(2) div.container.pmprice div:not(:first-child)>img {
+	height: 20px;
 	display: none;
 }
 
@@ -329,7 +294,7 @@ input[type=number]::-webkit-outer-spin-button {
 	justify-content: center;
 	padding-top: 40px;
 	padding-bottom: 40px;
-	background-color: #f5f5f5;
+	background-color: #4547fa;
 
 }
 
@@ -368,10 +333,6 @@ input[type=number]::-webkit-outer-spin-button {
 	border-top-right-radius: 0;
 }
 
-.a2:hover {
-	text-decoration: underline;
-}
-
 
 
 /*---------------------------------------------------------------------------------------------*/
@@ -382,6 +343,13 @@ input[type=number]::-webkit-outer-spin-button {
 	cursor: pointer;
 }
 
+@media (max-width: 700px) {
+
+	.featureImage{
+		width: 120px;
+	}
+}
+
 .featureImageSelected {
 	background-color: rgb(40, 255, 40);
 }
@@ -389,4 +357,114 @@ input[type=number]::-webkit-outer-spin-button {
 .featureDisabled {
 	cursor: not-allowed;
 	opacity: 0.5;
+}
+
+.featuresContainer {
+	max-height: 600px;
+	border: 2px solid black;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/* usage.html */
+
+.usageWrapper {
+	align-items: center;
+}
+
+.sliderSteps {
+	display: flex;
+	font-size: 0.8rem;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+@media (max-width: 440px) {
+
+	.sliderSteps {
+		font-size: 0.6rem;
+	}
+}
+
+.sliderSocialDiv {
+	background: #f26c4f !important;
+}
+
+.sliderVideoDiv {
+	background: #72acb7 !important;
+}
+
+.sliderGamingDiv {
+	background: #f9bf1f !important;
+}
+
+.sliderSpan {
+	background: #9f9f9f !important;
+}
+
+.usageTop {
+	position: absolute;
+	right: 10px;
+}
+
+.usageVery {
+	position: absolute;
+	right: 24%;
+}
+
+.usageRelatively {
+	position: absolute;
+	right: 46%;
+}
+
+.usageSomewhat {
+	position: absolute;
+	right: 70%;
+}
+
+.usageUnimportant {
+	position: absolute;
+	right: 90%;
+}
+
+.usageSocialSelected {
+	font-weight: bold;
+	/* text-shadow: 0px 0px 3px black; */
+	color: #f26c4f;
+}
+
+.usageVideoSelected {
+	font-weight: bold;
+	color: #72acb7;
+}
+
+.usageGamingSelected {
+	font-weight: bold;
+	color: #f9bf1f;
+}
+
+.btn-basic {
+	background-color: #fffa47;
+	color: black;
+	font-weight: bold;
+	width: 110px;
+}
+
+.btn-custom {
+	background-color: #f26c4f;
+	color: black;
+	font-weight: bold;
+	width: 110px;
+}
+
+#usage_page .container.mt-4 {
+	border: 2px solid black;
+	border-radius: 15px;
+}
+
+@media (max-width: 575px) {
+
+	#usageChoiceContainer .border-right {
+		border-right: none !important;
+	}
+
 }
