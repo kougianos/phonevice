@@ -3,4 +3,7 @@
 // Basic configuration
 require_once("./services/configuration.php");
 
+// User has visited index
+$_SESSION['steps']['index'] = true;
+
 $smarty->display('index.html', $_action);

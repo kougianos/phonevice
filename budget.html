@@ -3,5 +3,11 @@
 // Basic configuration
 require_once("./services/configuration.php");
 
-$smarty->display('budget.html', $_action);
+// Validation
+if(!isset($_SESSION['steps']['index']))
+	header("Location: index.html");
 
+// User has visited budget
+$_SESSION['steps']['budget'] = true;
+
+$smarty->display('budget.html', $_action);

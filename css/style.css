@@ -112,6 +112,15 @@ svg.rightArrow {
 	padding-right: 10%
 }
 
+.piggySVG {
+	margin-top: -15px;
+	margin-bottom: 15px;
+}
+
+.secondaryBanner svg {
+	fill: #5e5e5e;
+}
+
 /* ----------------------------------------------------------------------- */
 /*navbar.html*/
 

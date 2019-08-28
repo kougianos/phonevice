@@ -3,6 +3,10 @@
 // Basic configuration
 require_once("./services/configuration.php");
 
+// Validation
+if(!isset($_SESSION['steps']['index'], $_SESSION['steps']['budget'], $_SESSION['steps']['features'], $_SESSION['steps']['usage']))
+	header("Location: index.html");
+
 // Tool step-3 implementation
 require_once("./services/tool-step-3.php");
 

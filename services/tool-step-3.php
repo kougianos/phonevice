@@ -33,7 +33,7 @@ if(isset($_SESSION['phones'][0]['benchmarks']['PCMA_WORK_V2_DEFAULT']['Score']))
 	$w2scoreMax = $w2scoreMin = $_SESSION['phones'][0]['benchmarks']['PCMA_WORK_V2_DEFAULT']['Score'];
 
 if(isset($_SESSION['phones'][0]['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life']))
-	$w2batteryMax = $w2batteryMin = preg_replace('/[^0-9]+/', '', $_SESSION['phones'][0]['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life']);
+	$w2batteryMax = $w2batteryMin = $_SESSION['phones'][0]['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life'];
 
 if(isset($_SESSION['phones'][0]['display']['ppi']))
 	$ppiMax = $ppiMin = $_SESSION['phones'][0]['display']['ppi'];
@@ -52,6 +52,13 @@ if(isset($_SESSION['phones'][0]['display']['diagonal']))
 
 // Calculate min and max for each phone feature
 foreach($_SESSION['phones'] as $key => $phone) {
+
+	// Unset phones that do not have all 9 features set
+	if(!isset($phone['summary']['ram'], $phone['summary']['capacities'], $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Score'], $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life'], $phone['display']['ppi'], $phone['benchmarks']
+	['SLING_SHOT_ES_31']['Score'], $phone['summary']['weight'], $phone['display']['StB'], $phone['display']['diagonal'])) {
+		unset($_SESSION['phones'][$key]);
+		continue;
+	}
 
 	// Scores array
 	$_SESSION['phones'][$key]['scores'] = array();
@@ -93,14 +100,14 @@ foreach($_SESSION['phones'] as $key => $phone) {
 		$w2scoreMin = $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Score'];
 
 	$_SESSION['phones'][$key]['scores']['w2score'] = $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Score'];
-		
-	// Min and max w2battery
-	if(preg_replace('/[^0-9]+/', '', $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life']) > $w2batteryMax)
-		$w2batteryMax = preg_replace('/[^0-9]+/', '', $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life']);
-	if(preg_replace('/[^0-9]+/', '', $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life']) < $w2batteryMin)
-		$w2batteryMin = preg_replace('/[^0-9]+/', '', $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life']);
 
-	$_SESSION['phones'][$key]['scores']['w2battery'] = preg_replace('/[^0-9]+/', '', $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life']);
+	// Min and max w2battery
+	if($phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life'] > $w2batteryMax)
+		$w2batteryMax = $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life'];
+	if($phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life'] < $w2batteryMin)
+		$w2batteryMin = $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life'];
+
+	$_SESSION['phones'][$key]['scores']['w2battery'] = $phone['benchmarks']['PCMA_WORK_V2_DEFAULT']['Work 2_0 Battery life'];
 
 	// Min and max ppi 
 	if($phone['display']['ppi'] > $ppiMax)
@@ -144,6 +151,11 @@ foreach($_SESSION['phones'] as $key => $phone) {
 	
 }
 
+echo "<pre>";
+
+// Set custom use to false by default
+$customUse = false;
+
 // If user selected custom use
 if(isset($_GET['usageSocial'])) {
 
@@ -151,17 +163,23 @@ if(isset($_GET['usageSocial'])) {
 	if(!isset($_GET['usageGaming'], $_GET['usageVideo']))
 		header("Location: index.html");
 
+	// Set custom use to true to be used later in score calculation
+	$customUse = true;
+
 	// Strip unwanted characters and keep numbers only
 	$_GET['usageSocial'] = preg_replace('/[^0-9]+/', '', $_GET['usageSocial']);
 	$_GET['usageGaming'] = preg_replace('/[^0-9]+/', '', $_GET['usageGaming']);
 	$_GET['usageVideo'] = preg_replace('/[^0-9]+/', '', $_GET['usageVideo']);
 
+	// Calculate sum of usages
+	$usageTotal = $_GET['usageSocial'] + $_GET['usageGaming'] + $_GET['usageVideo'];
+
 	$videoWeights = array(
 		'w2score'	=>	0.01,
-		'ppi'		=>	0.21,
-		'w2battery'	=>	0.18,
+		'ppi'		=>	0.18,
+		'w2battery'	=>	0.19,
 		'stb'		=>	0.15,
-		'diagonal'	=>	0.11,
+		'diagonal'	=>	0.12,
 		'weight'	=>	-0.18,
 		'ram'		=>	0.04,
 		'capacity'	=>	0.04,
@@ -208,18 +226,23 @@ if(isset($_GET['usageSocial'])) {
 
 }
 
+// Scores array to be used in multisort after calculation of phone scores
+$scores = array();
 
-// TODO CALCULATE TOTAL SCORES FOR EACH PHONE
-
-
-// var_dump($_GET);
-
-// Normalize feature scores for each phone
+// Normalize feature scores for each phone and calculate total score
 foreach($_SESSION['phones'] as $key => $phone) {
 
 	// Normalize using method (x-min)/(max-min) for each feature
-	$_SESSION['phones'][$key]['scores']['ram'] = ($_SESSION['phones'][$key]['scores']['ram'] - $ramMin) / ($ramMax - $ramMin);
-	$_SESSION['phones'][$key]['scores']['capacity'] = ($_SESSION['phones'][$key]['scores']['capacity'] - $capacityMin) / ($capacityMax - $capacityMin);
+	if($ramMax===$ramMin)
+		$_SESSION['phones'][$key]['scores']['ram'] = 0;
+	else
+		$_SESSION['phones'][$key]['scores']['ram'] = ($_SESSION['phones'][$key]['scores']['ram'] - $ramMin) / ($ramMax - $ramMin);
+
+	if($capacityMax===$capacityMin)
+		$_SESSION['phones'][$key]['scores']['capacity'] = 0;
+	else
+		$_SESSION['phones'][$key]['scores']['capacity'] = ($_SESSION['phones'][$key]['scores']['capacity'] - $capacityMin) / ($capacityMax - $capacityMin);
+
 	$_SESSION['phones'][$key]['scores']['w2score'] = ($_SESSION['phones'][$key]['scores']['w2score'] - $w2scoreMin) / ($w2scoreMax - $w2scoreMin);
 	$_SESSION['phones'][$key]['scores']['w2battery'] = ($_SESSION['phones'][$key]['scores']['w2battery'] - $w2batteryMin) / ($w2batteryMax - $w2batteryMin);
 	$_SESSION['phones'][$key]['scores']['ppi'] = ($_SESSION['phones'][$key]['scores']['ppi'] - $ppiMin) / ($ppiMax - $ppiMin);
@@ -228,5 +251,94 @@ foreach($_SESSION['phones'] as $key => $phone) {
 	$_SESSION['phones'][$key]['scores']['stb'] = ($_SESSION['phones'][$key]['scores']['stb'] - $stbMin) / ($stbMax - $stbMin);
 	$_SESSION['phones'][$key]['scores']['diagonal'] = ($_SESSION['phones'][$key]['scores']['diagonal'] - $diagonalMin) / ($diagonalMax - $diagonalMin);
 
+	// Calculate total score based on whether custom use was selected or not
+	if($customUse===true) {
+
+		$_SESSION['phones'][$key]['total_score'] = 
+		(
+			$_GET['usageSocial']/$usageTotal
+		)
+						* 
+		(
+			$socialWeights['w2score']	* $_SESSION['phones'][$key]['scores']['w2score'] 	+ 
+			$socialWeights['ppi'] 		* $_SESSION['phones'][$key]['scores']['ppi'] 		+ 
+			$socialWeights['w2battery'] 	* $_SESSION['phones'][$key]['scores']['w2battery'] 	+ 
+			$socialWeights['stb'] 		* $_SESSION['phones'][$key]['scores']['stb'] 		+ 
+			$socialWeights['diagonal'] 	* $_SESSION['phones'][$key]['scores']['diagonal'] 	+ 
+			$socialWeights['weight'] 	* $_SESSION['phones'][$key]['scores']['weight'] 	+ 
+			$socialWeights['ram'] 		* $_SESSION['phones'][$key]['scores']['ram'] 		+ 
+			$socialWeights['capacity'] 	* $_SESSION['phones'][$key]['scores']['capacity'] 	+ 
+			$socialWeights['grafix']	* $_SESSION['phones'][$key]['scores']['grafix']
+		)
+								+
+		(
+			$_GET['usageGaming']/$usageTotal
+		)
+						* 
+		(
+			$gamingWeights['w2score'] 	* $_SESSION['phones'][$key]['scores']['w2score'] 	+ 
+			$gamingWeights['ppi'] 		* $_SESSION['phones'][$key]['scores']['ppi'] 		+ 
+			$gamingWeights['w2battery'] 	* $_SESSION['phones'][$key]['scores']['w2battery'] 	+ 
+			$gamingWeights['stb'] 		* $_SESSION['phones'][$key]['scores']['stb'] 		+ 
+			$gamingWeights['diagonal'] 	* $_SESSION['phones'][$key]['scores']['diagonal'] 	+ 
+			$gamingWeights['weight'] 	* $_SESSION['phones'][$key]['scores']['weight'] 	+ 
+			$gamingWeights['ram'] 		* $_SESSION['phones'][$key]['scores']['ram'] 		+ 
+			$gamingWeights['capacity'] 	* $_SESSION['phones'][$key]['scores']['capacity'] 	+ 
+			$gamingWeights['grafix']	* $_SESSION['phones'][$key]['scores']['grafix']
+		)
+								+
+		(
+			$_GET['usageVideo']/$usageTotal
+		)
+						* 
+		(
+			$videoWeights['w2score'] 	* $_SESSION['phones'][$key]['scores']['w2score'] 	+ 
+			$videoWeights['ppi'] 		* $_SESSION['phones'][$key]['scores']['ppi'] 		+ 
+			$videoWeights['w2battery'] 	* $_SESSION['phones'][$key]['scores']['w2battery'] 	+ 
+			$videoWeights['stb'] 		* $_SESSION['phones'][$key]['scores']['stb'] 		+ 
+			$videoWeights['diagonal'] 	* $_SESSION['phones'][$key]['scores']['diagonal'] 	+ 
+			$videoWeights['weight'] 	* $_SESSION['phones'][$key]['scores']['weight'] 	+ 
+			$videoWeights['ram'] 		* $_SESSION['phones'][$key]['scores']['ram'] 		+ 
+			$videoWeights['capacity'] 	* $_SESSION['phones'][$key]['scores']['capacity'] 	+ 
+			$videoWeights['grafix']		* $_SESSION['phones'][$key]['scores']['grafix']
+		);
+
+	} else {
+
+		$_SESSION['phones'][$key]['total_score'] = 
+
+		$basicWeights['w2score'] 	* $_SESSION['phones'][$key]['scores']['w2score'] 	+ 
+		$basicWeights['ppi'] 		* $_SESSION['phones'][$key]['scores']['ppi'] 		+ 
+		$basicWeights['w2battery'] 	* $_SESSION['phones'][$key]['scores']['w2battery'] 	+ 
+		$basicWeights['stb'] 		* $_SESSION['phones'][$key]['scores']['stb'] 		+ 
+		$basicWeights['diagonal'] 	* $_SESSION['phones'][$key]['scores']['diagonal'] 	+ 
+		$basicWeights['weight'] 	* $_SESSION['phones'][$key]['scores']['weight'] 	+ 
+		$basicWeights['ram'] 		* $_SESSION['phones'][$key]['scores']['ram'] 		+ 
+		$basicWeights['capacity'] 	* $_SESSION['phones'][$key]['scores']['capacity'] 	+ 
+		$basicWeights['grafix']		* $_SESSION['phones'][$key]['scores']['grafix'];
+
+	}
+
+	// Push phone total score to scores array
+	$scores[] = $_SESSION['phones'][$key]['total_score'];
+
 }
 
+// Sort phones based on scores array
+array_multisort($scores, SORT_DESC, $_SESSION['phones']);
+
+// Keep the best 3 phones
+$phones = array_slice($_SESSION['phones'], 0, 3);
+// $phones = $_SESSION['phones'];
+
+foreach($phones as $key => $phone) {
+
+
+	var_dump($phones[$key]['summary']['fullname']);
+	var_dump($phones[$key]['total_score']);
+	var_dump(round($phones[$key]['total_score']*1000)/10);
+	// var_dump($phones[$key]['scores']);
+	echo "----------\n";
+
+
+}
