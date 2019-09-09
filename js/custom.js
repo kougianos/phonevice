@@ -1,4 +1,3 @@
-
 // Jquery UI touch punch
 ! function (a) {
 	function f(a, b) {
@@ -52,7 +51,7 @@ $(document).ready(function () {
 
 	});
 
-	// Budget implementation - +/-$10	+/-$20	+/-$50
+	// Budget JS
 	if (document.getElementById('budget_page')) {
 
 		document.getElementById("+/-$10").onclick = function () {
@@ -116,7 +115,7 @@ $(document).ready(function () {
 
 	}
 
-	// Features implementation
+	// Features JS
 	if (document.getElementById('features_page')) {
 
 		// Click on feature image implementation
@@ -191,7 +190,7 @@ $(document).ready(function () {
 
 	}
 
-	// Usage implementation
+	// Usage JS
 	if (document.getElementById('usage_page')) {
 
 		// Hide usage choice container on custom button click
@@ -318,6 +317,105 @@ $(document).ready(function () {
 				}
 			});
 			$("#usageGamingAmount").val($("#gamingSlider").slider("value"));
+		});
+
+	}
+
+	// Results JS
+	if (document.getElementById('results_page')) {
+
+		$('#collapse2').hide();
+		$('#collapse3').hide();
+		$('#phone2').hide();
+		$('#phone3').hide();
+		$('.1st').addClass('green-circle');
+		$('.reset').hide();
+		$('.modal-backdrop').remove();
+
+		$("#compare_button").click(function () {
+			$("#collapse1").hide();
+			$("#collapse2").show();
+			$("#collapse3").hide();
+			$('.reset').show();
+		});
+
+		$("#compare_button2").click(function () {
+			$("#collapse1").hide();
+			$("#collapse2").show();
+			$("#collapse3").hide();
+			$('.reset').show();
+			$('#current_phone_search').modal('hide');
+		});
+
+		$("#accessories").click(function () {
+			$("#collapse1").hide();
+			$("#collapse2").hide();
+			$("#collapse3").show();
+			$('.reset').show();
+		});
+
+		$(".reset").click(function () {
+			$("#collapse1").show();
+			$('#collapse2').hide();
+			$('#collapse3').hide();
+			$('.reset').hide();
+		});
+
+		$(".to-phone-1").click(function () {
+			$("#phone1").show();
+			$('#phone2').hide();
+			$('#phone3').hide();
+			$('.1st').addClass('green-circle');
+			$('.2nd').removeClass('green-circle');
+			$('.3rd').removeClass('green-circle');
+		});
+
+		$(".to-phone-2").click(function () {
+			$("#phone1").hide();
+			$('#phone2').show();
+			$('#phone3').hide();
+			$('.1st').removeClass('green-circle');
+			$('.2nd').addClass('green-circle');
+			$('.3rd').removeClass('green-circle');
+		});
+
+		$(".to-phone-3").click(function () {
+			$("#phone1").hide();
+			$('#phone2').hide();
+			$('#phone3').show();
+			$('.1st').removeClass('green-circle');
+			$('.2nd').removeClass('green-circle');
+			$('.3rd').addClass('green-circle');
+		});
+
+		$('#modal_phone1').click(function () {
+			$('#current_phone_search').modal('hide');
+			alert('Phone 1 selected');
+		});
+
+		$('#modal_phone2').click(function () {
+			$('#current_phone_search').modal('hide');
+			alert('Phone 2 selected');
+		});
+
+		$('#modal_phone3').click(function () {
+			$('#current_phone_search').modal('hide');
+			alert('Phone 3 selected');
+		});
+
+		// Scroll to next/previous phone
+		$(".phoneWrapper").mouseenter(function(e) {
+			$("body").addClass("phoneHover");
+			$(document).on('scroll', function () {
+				// alert(2);
+			});
+		});
+
+		$(".phoneWrapper").mouseleave(function(e) {
+			$("body").removeClass("phoneHover");
+			$(document).on('scroll', function () {
+				// alert(2);
+			});
 		});
 
 	}

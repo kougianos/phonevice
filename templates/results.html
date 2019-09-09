@@ -2,6 +2,9 @@
 
 <body id="results_page">
 
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 	{include file='navbar.html'}
 
 	<div class="container-fluid text-center mb-5 px-1">
@@ -32,44 +35,286 @@
 					points="130.1 549.57 120.59 295.28 359.51 207.65 516.67 407.8 374.89 619.12" />
 			</g>
 			<path d="m1524.4 210.43h698.84" fill="none" stroke="#00a100" stroke-width="5.8167" />
-			<text transform="scale(.94041 1.0634)" x="101.88762" y="227.09068" fill="#00a100"
-				font-family="sans-serif" font-size="65.683px" letter-spacing="0px" stroke="#00a100"
-				stroke-width="1.6421" word-spacing="0px" style="line-height:1.25" xml:space="preserve">
-				<tspan x="101.88762" y="227.09068" fill="#00a100" stroke="#00a100"
-					stroke-width="1.6421">Budget</tspan>
+			<text transform="scale(.94041 1.0634)" x="101.88762" y="227.09068" fill="#00a100" font-family="sans-serif"
+				font-size="65.683px" letter-spacing="0px" stroke="#00a100" stroke-width="1.6421" word-spacing="0px"
+				style="line-height:1.25" xml:space="preserve">
+				<tspan x="101.88762" y="227.09068" fill="#00a100" stroke="#00a100" stroke-width="1.6421">Budget</tspan>
 			</text>
 			<path d="m424.52 210.43h698.84" fill="none" stroke="#00a100" stroke-width="5.8167" />
-			<g fill="#000300" font-family="sans-serif" font-size="65.684px" letter-spacing="0px"
-				stroke-width="1.6421" word-spacing="0px">
-				<text transform="scale(.94039 1.0634)" x="1313.171" y="178.86356"
-					style="line-height:1.25" xml:space="preserve" fill="#00a100" stroke="#00a100">
-					<tspan x="1313.171" y="178.86356" fill="#00a100" stroke="#00a100"
-						stroke-width="1.6421">Extra
+			<g fill="#000300" font-family="sans-serif" font-size="65.684px" letter-spacing="0px" stroke-width="1.6421"
+				word-spacing="0px">
+				<text transform="scale(.94039 1.0634)" x="1313.171" y="178.86356" style="line-height:1.25"
+					xml:space="preserve" fill="#00a100" stroke="#00a100">
+					<tspan x="1313.171" y="178.86356" fill="#00a100" stroke="#00a100" stroke-width="1.6421">Extra
 					</tspan>
 				</text>
-				<text transform="scale(.94039 1.0634)" x="1250.9904" y="263.41296"
-					style="line-height:1.25" xml:space="preserve" fill="#000300" stroke="#00a100">
-					<tspan x="1250.9904" y="263.41296" fill="#00a100" stroke="#00a100"
-						stroke-width="1.6421">Features
+				<text transform="scale(.94039 1.0634)" x="1250.9904" y="263.41296" style="line-height:1.25"
+					xml:space="preserve" fill="#000300" stroke="#00a100">
+					<tspan x="1250.9904" y="263.41296" fill="#00a100" stroke="#00a100" stroke-width="1.6421">Features
 					</tspan>
 				</text>
-				<text transform="scale(.94039 1.0634)" x="2473.0356" y="151.52805"
-					style="line-height:1.25" xml:space="preserve" fill="#00a100" stroke="#00a100">
+				<text transform="scale(.94039 1.0634)" x="2473.0356" y="151.52805" style="line-height:1.25"
+					xml:space="preserve" fill="#00a100" stroke="#00a100">
 					<tspan x="2473.0356" y="151.52805" fill="#00a100" stroke-width="1.6421">Types
 					</tspan>
 				</text>
-				<text transform="scale(.94039 1.0634)" x="2530.5437" y="229.08466"
-					style="line-height:1.25" xml:space="preserve" fill="#00a100" stroke="#00a100">
+				<text transform="scale(.94039 1.0634)" x="2530.5437" y="229.08466" style="line-height:1.25"
+					xml:space="preserve" fill="#00a100" stroke="#00a100">
 					<tspan x="2530.5437" y="229.08466" fill="#00a100" stroke-width="1.6421">of
 					</tspan>
 				</text>
-				<text transform="scale(.94039 1.0634)" x="2490.2883" y="306.64127"
-					style="line-height:1.25" xml:space="preserve" fill="#00a100" stroke="#00a100">
+				<text transform="scale(.94039 1.0634)" x="2490.2883" y="306.64127" style="line-height:1.25"
+					xml:space="preserve" fill="#00a100" stroke="#00a100">
 					<tspan x="2490.2883" y="306.64127" fill="#00a100" stroke-width="1.6421">Use
 					</tspan>
 				</text>
 			</g>
 		</svg>
+
+		<h2 class="mt-5 mb-3">Results</h2>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 offset-md-1">
+
+					{foreach $PHONES as $P}
+
+					<div id="phone{$P@iteration}" class="row mt-md-2 phoneWrapper">
+
+						<div class="col-md-6 offset-md-6 text-center up-arrow-area my-3">
+							<i class="fa fa-chevron-up fa-2x to-phone-{$P@iteration-1}"></i>
+						</div>
+
+						<div class="col-md-6 text-center">
+							<h6 class="small font-weight-bold mt-1">{$P['summary']['fullname']}</h6>
+							<img src="img/test/1.jpeg" alt="" class="w-75 mt-0">
+						</div>
+
+						<div class="col-md-6 text-center custom-p pb-md-4 pt-md-2">
+
+							<h5 class="font-weight-bold">Unprecedented Shit</h5>
+							<img src="img/test/android_auth.png" alt="" class="w-75">
+							<h6 class="font-weight-bold mt-md-4 pt-md-2">All reviews</h6>
+							<hr class="hr mt-md-4 w-100">
+							<p class="font-weight-bold small">2nd Best screen out of 3</p>
+							<p class="font-weight-bold small">1nd Best camera out of 3</p>
+							<p class="font-weight-bold small">3nd Best battery out of 3</p>
+							<h6 class="font-weight-bold mt-md-5">More Info</h6>
+							<hr class="hr mt-md-5">
+							<p class="font-weight-bold small mb-0">1300 + free hamster</p>
+							<p class="font-weight-bold small">amazon</p>
+							<p class="font-weight-bold small mb-0">2300 + free hamster</p>
+							<p class="font-weight-bold small">gearbest</p>
+							<p class="font-weight-bold small mb-0">3300 + free hamster</p>
+							<p class="font-weight-bold small">AliExpress</p>
+							<hr class="hr">
+
+							<div class="p-md-5">
+								<i class="fa fa-chevron-down fa-2x to-phone-{$P@iteration+1}"></i>
+							</div>
+
+						</div>
+
+					</div>
+
+					{/foreach}
+
+					<div class="circle-parent d-none mt-5 d-md-flex flex-column justify-content-between">
+						<div class="circle bg-light 1st to-phone-1">1st</div>
+						<div class="circle bg-light 2nd to-phone-2">2nd</div>
+						<div class="circle bg-light 3rd to-phone-3">3rd</div>
+					</div>
+
+				</div>
+
+				<div class="col-lg-6 d-block">
+
+					<div class="justify-content-center flex-column align-items-center h-75" id="collapse1">
+						<!-- Button trigger modal -->
+
+						<button class="btn btn-warning mb-4" data-toggle="modal" data-target="#current_phone_search">
+							Compare with your Current Phone
+						</button>
+
+						<br>
+
+						<div class="d-flex">
+							<button class="btn btn-primary mr-3" id="compare_button">Continue</button>
+							<button class="btn btn-primary" id="accessories">No Thanks</button>
+						</div>
+
+
+
+					</div>
+
+					<div class="text-center" id="collapse2">
+						<div class="row mt-md-5">
+							<div class="col-md-6">
+								<div class="pt-lg-5">
+									<h6 class="small font-weight-bold my-3">Your
+										phone compared to this one</h6>
+									<div class="">
+										<p class="font-weight-bold mb-2 comparison-text">
+											<span class="yellowText mr-2">13%
+												narrower</span> 8mm>6mm
+										</p>
+										<p class="font-weight-bold mb-2 comparison-text">
+											<span class="yellowText mr-2">20%
+												taller</span>
+											150mm>125mm</p>
+										<p class="font-weight-bold mb-2 comparison-text">
+											<span class="yellowText mr-2">9%
+												heavier</span> 180g>65g
+										</p>
+									</div>
+									<div class="my-lg-5 text-left">
+										<p class="screen"> <i class="fa fa-fire fa-2x text-success mr-2"></i>
+											Screen</p>
+										<p class="screen"> <i class="fa fa-trash fa-2x text-danger mr-2"></i>
+											Camera</p>
+										<p class="screen"> <i class="fa fa-trash fa-2x text-danger mr-2"></i>
+											Battery</p>
+									</div>
+									<a href="#" data-toggle="collapse" data-target="#collapse3" id="collpase3_toggler">
+										<h5 class="font-weight-bold text-dark">
+											Full Comparison
+											<p class="font-weight-bold mb-2 comparison-text">
+												(click to see next part)
+											</p>
+										</h5>
+									</a>
+								</div>
+
+							</div>
+							<div class="col-md-6 ">
+								<h6 class="small font-weight-bold mt-2">Samsung Universe
+									-1</h6>
+								<img src="img/test/1.jpeg" alt="" class="w-75 mt-0">
+							</div>
+						</div>
+					</div>
+
+					<div class=" text-center" id="collapse3">
+						<div class="row mt-md-5 pt-md-2 ml-md-3">
+							<h5 class="col-md-12 font-weight-bold text-left">Accessories
+								(included in box)</h5>
+							<div class="row offersWrapperWrapper">
+
+								<div class="col-md-6 offersWrapper p-1">
+									<a href="#" target="_blank">
+										<img src="img/test/offer1.jpg" alt="offer1" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top"
+											title="Free Stock Lamborghini Aventador..."></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1">
+									<a href="#" target="_blank">
+										<img src="img/test/offer2.jpg" alt="offer2" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top"
+											title="A lovely shoe directly form trash..."></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1"><a href="#" target="_blank">
+										<img src="img/test/offer3.jpg" alt="offer3" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top"
+											title="Free one-way Picnic to Moon."></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1"><a href="#" target="_blank">
+										<img src="img/test/offer4.jpg" alt="offer4" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top"
+											title="Iron man suit (Since he's dead, he can't use it anyways)."></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1"><a href="#" target="_blank">
+										<img src="img/test/offer5.jpg" alt="offer5" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top"
+											title="Captain Jack Sparrow + Mr.Bean Hybrid"></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1"><a href="#" target="_blank">
+										<img src="img/test/offer6.jpg" alt="offer6" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top" title="Whatever that is..."></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1"><a href="#" target="_blank">
+										<img src="img/test/offer7.jpg" alt="offer7" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top"
+											title="Yeah, about that...... Still trying to figure out......"></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1"><a href="#" target="_blank">
+										<img src="img/test/offer8.jpg" alt="offer8" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top"
+											title="Phone with Never dying battery (cause all dead already)"></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1"><a href="#" target="_blank">
+										<img src="img/test/offer9.jpg" alt="offer9" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top"
+											title="You already read that..."></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1"><a href="#" target="_blank">
+										<img src="img/test/offer10.jpg" alt="offer10" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top" title="No Idea....."></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1"><a href="#" target="_blank">
+										<img src="img/test/offer11.jpg" alt="offer11" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top" title="Bigfoot remains..."></a>
+								</div>
+								<div class="col-md-6 offersWrapper p-1"><a href="#" target="_blank">
+										<img src="img/test/offer12.jpg" alt="offer12" class="w-100 h-100"
+											data-toggle="tooltip" data-placement="top"
+											title="Read the sign carefully"></a>
+								</div>
+							</div>
+							<p class="font-weight-bold small">More Products</p>
+							<h5 class="col-md-12 font-weight-bold text-left mt-md-1 mb-md-0 pl-md-0">
+								Forum</h5>
+							<div class="forumImageWrapper w-75">
+								<img src="img/test/offer3.jpg" alt="" class="w-100">
+							</div>
+
+
+						</div>
+					</div>
+
+					<!-- ------------------------------------------ Collapse 3 ends -->
+					<div class="d-flex justify-content-around">
+						<a href="#" class="btn btn-danger reset">Reset</a>
+					</div>
+					<!-- col-lg-5 ends -->
+				</div>
+				<!-- row ends -->
+			</div>
+
+			<!-- container ends -->
+		</div>
+
+		<div class="modal fade" id="current_phone_search" tabindex="-1" role="dialog"
+			aria-labelledby="current_phone_searchLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="current_phone_searchLabel">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form class="form-inline my-2 my-lg-0">
+							<input class="form-control mr-sm-2 w-75" type="search" placeholder="Search"
+								aria-label="Search">
+							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+						</form>
+						<div class="modal_search_results pt-md-3">
+							<h6>Results:</h6>
+							<ul class="list-group">
+								<li class="list-group-item" id="modal_phone1">Phone 1</li>
+								<li class="list-group-item" id="modal_phone2">Phone 2</li>
+								<li class="list-group-item" id="modal_phone3">Phone 3</li>
+							</ul>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id='compare_button2'>Go to Phone</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 
