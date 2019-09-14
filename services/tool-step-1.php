@@ -1,7 +1,9 @@
 <?php
 
-// Validate that budget and budget range are both set
-if(!isset($_GET['budget'], $_GET['range']))
+// Validation array
+$validationGetArray = array("budget", "range");
+
+if(!isset($_GET['budget']) || sizeof($_GET)>2 || array_diff(array_keys($_GET), $validationGetArray)!==array())
 	header("Location: index.html");
 
 // Strip unwanted characters 
@@ -14,11 +16,12 @@ $backupDb = $_SESSION['phones'];
 
 // Budget
 $budget = $_GET['budget'];
-$budgetRange = $_GET['range'];
 
 // Calculate budget range if not set by user
-if(!isset($budgetRange))
+if(!isset($_GET['range']))
 	$budgetRange = $budget/20;
+else
+	$budgetRange = $_GET['range'];
 
 // Budget algorithm
 while(1) {
@@ -46,7 +49,7 @@ while(1) {
 
 }
 
-// Initial features array @TODO make it multi dimensional array where every element count and img URL
+// Initial features array @TODO make it multi dimensional array where every element has count and img URL
 $initialFeatures = array(
 
 	'microSD'		=>	0,
@@ -68,11 +71,11 @@ foreach($_SESSION['phones'] as $key => $phone) {
 		$initialFeatures['microSD']++;
 		$_SESSION['phones'][$key]['available_features'][] = "microSD";
 	}
-	if(isset($phone['features']['nfc']) && $phone['features']['nfc']==true) {
+	if(isset($phone['comms']['connectivity']) && in_array("NFC", $phone['comms']['connectivity'])) {
 		$initialFeatures['nfc']++;
 		$_SESSION['phones'][$key]['available_features'][] = "nfc";
 	}
-	if(isset($phone['features']['dual_sim']) && $phone['features']['dual_sim']==true) {
+	if(isset($phone['sim']['slots']) && $phone['sim']['slots']==2) {
 		$initialFeatures['dualSim']++;
 		$_SESSION['phones'][$key]['available_features'][] = "dualSim";
 	}
