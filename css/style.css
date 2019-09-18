@@ -40,6 +40,16 @@ svg.leftArrow {
 	left: 10px;
 }
 
+/* Non selectable stuff */
+svg, h2, h4, .pmprice, .navbar, img, .featuresContainer, .secondaryBanner {
+	-webkit-touch-callout: none; /* iOS Safari */
+    	-webkit-user-select: none; /* Safari */
+     	-khtml-user-select: none; /* Konqueror HTML */
+       	-moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; 
+}
+
 svg.rightArrow {
 	width: 25px;
 	position: absolute;
@@ -78,7 +88,7 @@ svg.rightArrow {
 
 .progressBar {
 	width: 100%;
-	max-width: 900px;
+	max-width: 700px;
 }
 
 .searchBar input.form-control {
@@ -376,6 +386,17 @@ input[type=number]::-webkit-outer-spin-button {
 	max-height: 600px;
 	border: 2px solid black;
 }
+
+.feature {
+	width: 33.3%;
+}
+
+@media (max-width: 440px) {
+	.feature {
+		width: 100%;
+	}
+}
+
 
 /*---------------------------------------------------------------------------------------------*/
 /* usage.html */
