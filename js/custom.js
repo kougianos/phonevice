@@ -451,12 +451,6 @@ $(document).ready(function () {
 			alert('Phone 3 selected');
 		});
 
-		$('.slick').slick({
-			variableWidth: true,
-			slidesToShow: 1,
-			dots: true
-		});
-
 	}
 
 });

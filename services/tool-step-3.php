@@ -164,7 +164,7 @@ foreach($_SESSION['phones'] as $key => $phone) {
 	
 }
 
-echo "<pre>";
+// echo "<pre>";
 
 // Set custom use to false by default
 $customUse = false;
@@ -367,16 +367,16 @@ foreach($phones as $key => $phone) {
 
 foreach($phones as $key => $phone) {
 
-	var_dump($phone['medal']);
-	var_dump($phones[$key]['summary']['fullname']);
-	var_dump($phones[$key]['total_score']);
-	var_dump(round($phones[$key]['total_score']*1000)/10);
+	// var_dump($phone['medal']);
+	// var_dump($phones[$key]['summary']['fullname']);
+	// var_dump($phones[$key]['total_score']);
+	// var_dump(round($phones[$key]['total_score']*1000)/10);
 	// var_dump($phones[$key]['scores']);
-	echo "----------\n";
+	// echo "----------\n";
 
 }
 
-echo "</pre>";
+// echo "</pre>";
 
 // Assign initial features on smarty
 $smarty->assignByRef('PHONES', $phones);

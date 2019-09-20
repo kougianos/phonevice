@@ -381,7 +381,7 @@ input[type=number]::-webkit-outer-spin-button {
 @media (max-width: 700px) {
 
 	.featureImage {
-		width: 120px;
+		width: 90px;
 	}
 }
 
@@ -405,7 +405,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 @media (max-width: 440px) {
 	.feature {
-		width: 100%;
+		width: 50%;
 	}
 }
 
@@ -643,34 +643,27 @@ input[type=number]::-webkit-outer-spin-button {
 
 	max-width: 1500px;
 	margin: auto;
+
 }
 
-.slick-slide {
-	width: 200px;
+.carousel-control-next-icon, .carousel-control-prev-icon {
+
+	width: 40px;
+	height: 40px;
+	border-radius: 25px;
+	background-color: #dc3545;
+
 }
 
-.slick-prev:before {
-	content: "<";
-	color: #4547fa;
-	font-size: 40px;
+.carousel-control-next, .carousel-control-prev {
+
+	height: 40px;
+	margin: auto;
+
 }
 
-.slick-next {
-	right: -10px;
-}
-
-.slick-next:before {
-	content: ">";
-	color: #4547fa;
-	font-size: 40px;
-}
-
-.slick-dots li button::before {
-	font-size: 30px;
-	color: #4547fa;
-}
-
-.slick-dots li.slick-active button::before {
-	color: #4547fa;
-	opacity: 1;
+.carousel-indicators li {
+	height: 8px;
+	background-color: #dc3545;
+	opacity: 0.6;
 }
