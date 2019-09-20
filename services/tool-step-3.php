@@ -343,7 +343,9 @@ $phones[0]['medal']['place'] = "1st";
 $phones[1]['medal']['place'] = "2nd";
 $phones[2]['medal']['place'] = "3rd";
 
-// Beautify phone information
+// Beautify phone information and calculate best battery, ppi
+$bestPpi = $worstPpi = array(0, $phones[0]['scores']['ppi']);
+$bestBattery = $worstBattery = array(0, $phones[0]['scores']['w2battery']);
 foreach($phones as $key => $phone) {
 
 	// CPU
@@ -362,8 +364,37 @@ foreach($phones as $key => $phone) {
 	if(isset($phone['cameras']['camera_2']['sensor']['photo']) && sizeof($phone['cameras']['camera_2']['sensor']['photo'])>=2)
 		$phones[$key]['front_camera_MP'] = number_format($phone['cameras']['camera_2']['sensor']['photo'][0] * $phone['cameras']['camera_2']['sensor']['photo'][1]/1000000, 1);
 
+	// Best ppi
+	if($phone['scores']['ppi'] >= $bestPpi[1]) {
+		$bestPpi[1] = $phone['scores']['ppi'];
+		$bestPpi[0] = $key;
+	}
+
+	// Best battery
+	if($phone['scores']['w2battery'] >= $bestBattery[1]) {
+		$bestBattery[1] = $phone['scores']['w2battery'];
+		$bestBattery[0] = $key;
+	}
+
+	// Worst ppi
+	if($phone['scores']['ppi'] <= $bestPpi[1]) {
+		$worstPpi[1] = $phone['scores']['ppi'];
+		$worstPpi[0] = $key;
+	}
+
+	// Worst battery
+	if($phone['scores']['w2battery'] <= $bestBattery[1]) {
+		$worstBattery[1] = $phone['scores']['w2battery'];
+		$worstBattery[0] = $key;
+	}
+
 }
 
+// Assign best and worst battery, ppi
+$phones[$bestBattery[0]]['best_battery'] = true;
+$phones[$bestPpi[0]]['best_ppi'] = true;
+$phones[$worstBattery[0]]['worst_battery'] = true;
+$phones[$worstPpi[0]]['worst_ppi'] = true;
 
 foreach($phones as $key => $phone) {
 
@@ -372,6 +403,10 @@ foreach($phones as $key => $phone) {
 	// var_dump($phones[$key]['total_score']);
 	// var_dump(round($phones[$key]['total_score']*1000)/10);
 	// var_dump($phones[$key]['scores']);
+	// if(isset($phone['best_battery']))
+		// var_dump($phone['best_battery']);
+	// if(isset($phone['best_ppi']))
+		// var_dump($phone['best_ppi']);
 	// echo "----------\n";
 
 }

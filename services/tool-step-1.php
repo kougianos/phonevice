@@ -11,7 +11,7 @@ $_GET['budget'] = preg_replace('/[^0-9]+/', '', $_GET['budget']);
 $_GET['range'] = preg_replace('/[^0-9]+/', '', $_GET['range']);
 
 // Original and backup database
-$_SESSION['phones'] = json_decode(file_get_contents(__DIR__."/../database/dbApril2019.json"), true);
+$_SESSION['phones'] = json_decode(file_get_contents(__DIR__."/../database/dbApril2019Pretty.json"), true);
 $backupDb = $_SESSION['phones'];
 
 // Budget
