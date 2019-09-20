@@ -334,15 +334,45 @@ array_multisort($scores, SORT_DESC, $_SESSION['phones']);
 
 // Keep the best 3 phones
 $phones = array_slice($_SESSION['phones'], 0, 3);
-// $phones = $_SESSION['phones'];
+
+// Assign medals and placements
+$phones[0]['medal']['img'] = "img/medals/goldMedal.png";
+$phones[1]['medal']['img'] = "img/medals/silverMedal.png";
+$phones[2]['medal']['img'] = "img/medals/bronzeMedal.png";
+$phones[0]['medal']['place'] = "1st";
+$phones[1]['medal']['place'] = "2nd";
+$phones[2]['medal']['place'] = "3rd";
+
+// Beautify phone information
+foreach($phones as $key => $phone) {
+
+	// CPU
+	$phones[$key]['system']['SoC'] = explode(" ", $phones[$key]['system']['SoC']);
+	foreach($phones[$key]['system']['SoC'] as $tmpkey => $tmp) {
+		if($tmpkey>2)
+			unset($phones[$key]['system']['SoC'][$tmpkey]);
+	}
+	$phones[$key]['system']['SoC'] = implode(" ", $phones[$key]['system']['SoC']);
+
+	// Rear Camera
+	if(isset($phone['cameras']['camera_1']['sensor']['photo']) && sizeof($phone['cameras']['camera_1']['sensor']['photo'])>=2)
+		$phones[$key]['rear_camera_MP'] = number_format($phone['cameras']['camera_1']['sensor']['photo'][0] * $phone['cameras']['camera_1']['sensor']['photo'][1]/1000000, 1);
+
+	// Front Camera
+	if(isset($phone['cameras']['camera_2']['sensor']['photo']) && sizeof($phone['cameras']['camera_2']['sensor']['photo'])>=2)
+		$phones[$key]['front_camera_MP'] = number_format($phone['cameras']['camera_2']['sensor']['photo'][0] * $phone['cameras']['camera_2']['sensor']['photo'][1]/1000000, 1);
+
+}
+
 
 foreach($phones as $key => $phone) {
 
-	// var_dump($phones[$key]['summary']['fullname']);
-	// var_dump($phones[$key]['total_score']);
-	// var_dump(round($phones[$key]['total_score']*1000)/10);
+	var_dump($phone['medal']);
+	var_dump($phones[$key]['summary']['fullname']);
+	var_dump($phones[$key]['total_score']);
+	var_dump(round($phones[$key]['total_score']*1000)/10);
 	// var_dump($phones[$key]['scores']);
-	// echo "----------\n";
+	echo "----------\n";
 
 }
 

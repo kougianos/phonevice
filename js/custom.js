@@ -42,6 +42,7 @@ $(document).ready(function () {
 
 	// Disable/enable scroll functionality
 	var keys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
+
 	function preventDefault(e) {
 		e = e || window.event;
 		if (e.preventDefault)
@@ -450,31 +451,10 @@ $(document).ready(function () {
 			alert('Phone 3 selected');
 		});
 
-		// Scroll to next/previous phone
-		$(".phoneWrapper").mouseenter(function (e) {
-			$("body").addClass("phoneHover");
-
-			// disable_scroll();
-
-		});
-
-		$(".phoneWrapper").mouseleave(function (e) {
-			$("body").removeClass("phoneHover");
-			$(document).on('scroll', function () {
-				// alert(2);
-			});
-
-			enable_scroll();
-
-		});
-
-		$(document).on('scroll', function () {
-
-			if($("body").hasClass("phoneHover")) {
-				disable_scroll();
-				// alert(1);
-			}
-
+		$('.slick').slick({
+			variableWidth: true,
+			slidesToShow: 1,
+			dots: true
 		});
 
 	}
