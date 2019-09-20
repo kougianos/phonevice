@@ -377,13 +377,13 @@ foreach($phones as $key => $phone) {
 	}
 
 	// Worst ppi
-	if($phone['scores']['ppi'] <= $bestPpi[1]) {
+	if($phone['scores']['ppi'] <= $worstPpi[1]) {
 		$worstPpi[1] = $phone['scores']['ppi'];
 		$worstPpi[0] = $key;
 	}
 
 	// Worst battery
-	if($phone['scores']['w2battery'] <= $bestBattery[1]) {
+	if($phone['scores']['w2battery'] <= $worstBattery[1]) {
 		$worstBattery[1] = $phone['scores']['w2battery'];
 		$worstBattery[0] = $key;
 	}
