@@ -101,6 +101,12 @@ svg.rightArrow {
 .progressBar {
 	width: 100%;
 	max-width: 700px;
+	height: 25px;
+	border: 1px solid #dc3545;
+}
+
+.progress-bar.active {
+	background-color: #4547fa !important;
 }
 
 .searchBar input.form-control {
@@ -180,11 +186,6 @@ nav .navbar-nav .dropdown-menu {
 
 /* ----------------------------------------------------------------------- */
 /* budget.html */
-
-.bluebg2 {
-	background-image: linear-gradient(to right, #004ef7 0%, #019dff 20%, #0543b2 100%);
-	width: 100%;
-}
 
 .caption {
 	padding-top: 5%;
@@ -425,7 +426,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 440px) {
-
 	.sliderSteps {
 		font-size: 0.6rem;
 	}
@@ -474,7 +474,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .usageSocialSelected {
 	font-weight: bold;
-	/* text-shadow: 0px 0px 3px black; */
 	color: #f26c4f;
 }
 
@@ -517,91 +516,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*---------------------------------------------------------------------------------------------*/
 /* results.html */
-
-.mid-line {
-	position: absolute;
-	right: -2rem;
-	top: 0;
-}
-
-.yellowText {
-	color: #aca002;
-}
-
-.comparison-text {
-	font-size: .6rem
-}
-
-.offersWrapper {
-	height: 150px;
-	overflow: hidden;
-}
-
-.offersWrapperWrapper {
-	max-height: 350px;
-	overflow: scroll;
-}
-
-.circle-parent {
-	position: absolute;
-	top: 0;
-	left: 95%;
-	z-index: 99;
-}
-
-.circle {
-	position: relative;
-	border: 2px solid #444;
-	border-radius: 100%;
-	width: 24px;
-	line-height: 20px;
-	text-align: center;
-	margin-top: 300px;
-	background-color: #fff;
-	z-index: 2;
-	font-size: .5rem;
-	font-weight: bold;
-}
-
-.circle:first-child {
-	margin-top: 0;
-}
-
-.circle:before {
-	position: absolute;
-	border: 1px solid #444;
-	width: 0;
-	height: 304px;
-	display: block;
-	content: '';
-	left: 50%;
-	z-index: 1;
-	top: -304px;
-	margin-left: -1px;
-}
-
-.circle:first-child:before {
-	display: none;
-}
-
-#collapse1 {
-	display: flex;
-
-}
-
-.green-circle {
-	border-color: palegreen !important;
-}
-
-.up-arrow-area {
-	height: 30px;
-}
-
-.up-arrow-area-1 {
-	height: 62px !important;
-}
-
-/* --------------------- */
 
 .phoneMedal {
 	position: absolute;

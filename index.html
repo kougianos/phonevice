@@ -6,4 +6,7 @@ require_once("./services/configuration.php");
 // User has visited index
 $_SESSION['steps']['index'] = true;
 
+// Calculate phone names for autocomplete
+require_once("./services/load-phonenames.php");
+
 $smarty->display('index.html', $_action);
