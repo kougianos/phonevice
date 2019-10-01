@@ -17,6 +17,9 @@ $backupDb = $_SESSION['phones'];
 // Budget
 $budget = $_GET['budget'];
 
+$minimumBudget = 0.75*$budget;
+$maximumBudget = $budget + 0.055*$budget;
+
 // Calculate budget range if not set by user
 if(!isset($_GET['range']))
 	$budgetRange = $budget/20;
@@ -34,7 +37,7 @@ while(1) {
 			unset($_SESSION['phones'][$key]);
 
 		// Keep phones that have min or max price in budget range
-		if(!(($phone['minPrice']>=($budget-$budgetRange) && $phone['minPrice']<=($budget+$budgetRange)) || ($phone['maxPrice']>=($budget-$budgetRange) && $phone['maxPrice']<=($budget+$budgetRange))))
+		if(!(($phone['minPrice']>=$minimumBudget && $phone['minPrice']<=$maximumBudget) || ($phone['maxPrice']>=$minimumBudget && $phone['maxPrice']<=$maximumBudget)))
 			unset($_SESSION['phones'][$key]);
 
 	}
@@ -42,7 +45,8 @@ while(1) {
 	// If there are less than 10 results, increase budget range and repeat
 	if(sizeof($_SESSION['phones'])<10) {
 		$_SESSION['phones'] = $backupDb;
-		$budgetRange += $budget/20;
+		$maximumBudget += $maximumBudget/20;
+		$minimumBudget -= $budget/$minimumBudget;
 	} else {
 		break;
 	}
