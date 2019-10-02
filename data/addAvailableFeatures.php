@@ -4,6 +4,8 @@ $phones = json_decode(file_get_contents(__DIR__."/../database/dbApril2019.json")
 
 foreach($phones as $key => $phone) {
 
+	$phones[$key]['available_features'] = array();
+
 	if(isset($phone['summary']['expansion'])) {
 		$phones[$key]['available_features'][] = "microSD";
 	}
@@ -24,6 +26,13 @@ foreach($phones as $key => $phone) {
 	}
 	if(isset($phone['multimedia']['3mm_jack']) && $phone['multimedia']['3mm_jack']==true) {
 		$phones[$key]['available_features'][] = "headphoneJack";
+	}
+	if(isset($phone['sensors']['biometric'])) {
+		if(in_array("Fingerprint", $phone['sensors']['biometric']))
+			$phones[$key]['available_features'][] = "fingerprintSensor";
+	}
+	if(isset($phone['summary']['waterproof'])) {
+		$phones[$key]['available_features'][] = "waterproof";
 	}
 
 }
