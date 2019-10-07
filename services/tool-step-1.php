@@ -1,17 +1,16 @@
 <?php
 
 // Validation array
-$validationGetArray = array("budget", "range");
+$validationGetArray = array("budget");
 
-if(!isset($_GET['budget']) || sizeof($_GET)>2 || array_diff(array_keys($_GET), $validationGetArray)!==array())
+if(!isset($_GET['budget']) || sizeof($_GET)>1 || array_diff(array_keys($_GET), $validationGetArray)!==array())
 	header("Location: index.html");
 
 // Strip unwanted characters 
 $_GET['budget'] = preg_replace('/[^0-9]+/', '', $_GET['budget']);
-$_GET['range'] = preg_replace('/[^0-9]+/', '', $_GET['range']);
 
 // Original and backup database
-$_SESSION['phones'] = json_decode(file_get_contents(__DIR__."/../database/dbApril2019Pretty.json"), true);
+$_SESSION['phones'] = json_decode(file_get_contents(__DIR__."/../database/dbApril2019.json"), true);
 $backupDb = $_SESSION['phones'];
 
 // Budget
@@ -62,7 +61,9 @@ $initialFeatures = array(
 	'radio'			=>	0,
 	'fastCharging'		=>	0,
 	'wirelessCharging'	=>	0,
-	'headphoneJack'		=>	0
+	'headphoneJack'		=>	0,
+	'fingerprintSensor'	=>	0,
+	'waterproof'		=>	0
 
 );
 
@@ -98,6 +99,16 @@ foreach($_SESSION['phones'] as $key => $phone) {
 	if(isset($phone['multimedia']['3mm_jack']) && $phone['multimedia']['3mm_jack']==true) {
 		$initialFeatures['headphoneJack']++;
 		$_SESSION['phones'][$key]['available_features'][] = "headphoneJack";
+	}
+	if(isset($phone['sensors']['biometric'])) {
+		if(in_array("Fingerprint", $phone['sensors']['biometric'])) {
+			$initialFeatures['fingerprintSensor']++;
+			$_SESSION['phones'][$key]['available_features'][] = "fingerprintSensor";
+		}
+	}
+	if(isset($phone['summary']['waterproof'])) {
+		$initialFeatures['waterproof']++;
+		$_SESSION['phones'][$key]['available_features'][] = "waterproof";
 	}
 
 }

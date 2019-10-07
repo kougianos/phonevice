@@ -10,14 +10,11 @@ body {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
+	background: #fffbe9;
 }
 
 footer {
-	background-color: #4547fa;
-}
-
-.bluebg {
-	background-color: #4547fa;
+	background-color: #343a40;
 }
 
 .white {
@@ -68,41 +65,21 @@ svg.rightArrow {
 	right: 10px;
 }
 
-.redbutton {
-	background-color: #f64e5d;
-	color: white;
-	padding: 14px 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 14px;
-	box-shadow: 3px 3px 3px 1px #888888;
-}
-
-.linkbutton {
-	border: none;
-	background-image: linear-gradient(to right, #ffcd6b, #e9775f);
-	color: white;
-	padding: 10px 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 14px;
-	margin-top: 10%;
-	margin-bottom: 10%
-}
-
 .jumbotronCustom {
 	padding-top: 1%;
 	padding-bottom: 0%;
 	margin-bottom: 0;
+	background-color: #343a40;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%235d5535' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23857029' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23ae8b1e' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23d6a612' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23ffc107' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 .progressBar {
 	width: 100%;
 	max-width: 700px;
 	height: 25px;
-	border: 1px solid #dc3545;
+	border: 1px solid #ffc107;
 }
 
 .progress-bar.active {
@@ -121,19 +98,8 @@ svg.rightArrow {
 }
 
 .mainBanner {
-	padding-top: 5%;
-	width: 100%
-}
-
-.mainBanner .mainBannerHand {
-	max-height: 400px;
-}
-
-.mainBanner .mainBannerHand img {
-	object-fit: scale-down;
-	height: inherit;
-	width: inherit;
-	max-height: 400px;
+	width: 100%;
+	min-height: 400px;
 }
 
 .secondaryBanner {
@@ -154,7 +120,7 @@ svg.rightArrow {
 /*navbar.html*/
 
 nav.navbar {
-	background-color: #4547fa !important;
+	background-color: #343a40 !important;
 }
 
 nav a,
@@ -186,77 +152,31 @@ nav .navbar-nav .dropdown-menu {
 
 /* ----------------------------------------------------------------------- */
 /* budget.html */
-
-.caption {
-	padding-top: 5%;
-	font-family: "Actor";
-	font-weight: 100;
-	font-size: 20px;
+#form {
+	font-size: 30px;
 }
 
-.input-caption {
-	font-family: "Lato"Montserrat;
-	font-size: 25px;
+#form input {
+	width: 60px;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
+#slider-range-max {
+	font-size: 22px;
 }
 
-.inp {
-	font-family: "Lato"Montserrat;
-	font-size: 25px;
+#slider-range-max .ui-widget-header {
+	background: #ffc107;
+}
+
+#slider-range-max span {
+	outline: none;
+	background: #808080;
+}
+
+#amount {
+	background: inherit;
 	border: none;
-	border-bottom: 1px solid #000;
-	width: 80px;
 	text-align: center;
-	/*margin: 40% 40% 40% 10%;*/
-	margin-top: 40px;
-}
-
-.pmprice {
-	font-family: "Lato"Montserrat;
-	font-size: 25px;
-	text-align: left;
-}
-
-.no-right-pad-mar {
-	padding-right: 0px;
-	margin-right: 0px;
-}
-
-.no-left-pad-mar {
-	padding-left: 0px;
-	margin-left: 0px;
-}
-
-.blacktext {
-	color: #000;
-}
-
-.blacktext:hover {
-	cursor: pointer;
-}
-
-.graytext {
-	color: #ccc;
-}
-
-.graytext:hover {
-	cursor: pointer;
-}
-
-.linkbutton2 {
-	background-image: linear-gradient(to right, #ffcd6b, #e9775f);
-	color: white;
-	padding: 10px 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 14px;
-	margin: 5% 5% 5% 5%;
 }
 
 .row {
@@ -300,7 +220,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .budgetMainContent {
-	padding-top: 5%;
 	width: 100%;
 }
 
@@ -315,7 +234,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /*---------------------------------------------------------------------------------------------*/
-/* login.html */
+/* login.html / register.html */
 
 .singin_body {
 	height: 100%;
@@ -330,7 +249,7 @@ input[type=number]::-webkit-outer-spin-button {
 	justify-content: center;
 	padding-top: 40px;
 	padding-bottom: 40px;
-	background-color: #4547fa;
+	background-color: #343a40;
 
 }
 
@@ -368,7 +287,6 @@ input[type=number]::-webkit-outer-spin-button {
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
-
 
 
 /*---------------------------------------------------------------------------------------------*/
@@ -564,7 +482,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
 
 	width: 40px;
 	height: 40px;
@@ -573,7 +492,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
 
 	height: 40px;
 	margin: auto;

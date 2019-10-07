@@ -1,0 +1,9 @@
+<?php
+
+ini_set("session.cookie_secure", true);
+ini_set("session.cookie_httponly", true);
+session_name("PhoneVice");
+session_start();
+
+// Features check implementation
+require_once("../services/login.php");

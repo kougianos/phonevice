@@ -4,7 +4,10 @@ $phones = json_decode(file_get_contents(__DIR__."/../database/dbApril2019.json")
 
 foreach($phones as $key => $phone) {
 
-	$phones[$key]['available_features'] = array();
+	$phones[$key]['available_features'] = $phones[$key]['images'] = array();
+
+	$phones[$key]['images'][] = "https://b.scdn.gr/images/sku_main_images/012747/12747336/20170911110258_nokia_8_64gb.jpeg";
+	$phones[$key]['images'][] = "https://b.scdn.gr/images/sku_main_images/017025/17025989/20190110120025_xiaomi_redmi_note_7.jpeg";
 
 	if(isset($phone['summary']['expansion'])) {
 		$phones[$key]['available_features'][] = "microSD";

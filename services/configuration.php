@@ -79,3 +79,6 @@ if(isset($_SESSION['locale']) && is_numeric($_SESSION['locale'])) {
 }
 
 $_action = $_SESSION['locale'];
+
+if(isset($_SESSION['user']))
+	$smarty->assignByRef('USER', $_SESSION['user']);

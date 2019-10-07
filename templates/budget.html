@@ -6,69 +6,87 @@
 
 	<div class="container-fluid text-center mb-5 px-1">
 
-		<div class="progressBar progress px-0 mx-auto mt-4 font-weight-bold"> 
+		<div class="progressBar progress px-0 mx-auto mt-4 font-weight-bold">
 
-			<div class="progress-bar bg-danger w-25" > 
+			<div class="progress-bar bg-warning text-dark w-25">
 				Budget
-			</div> 
-				
-			<div class="progress-bar bg-light text-black-50 w-25 border-right"> 
-				Features
-			</div> 
-		
-			<div class="progress-bar bg-light text-black-50 w-25 border-right"> 
-				Usage 
-			</div> 
-		
-			<div class="progress-bar bg-light text-black-50 w-25"> 
-				Results 
-			</div> 
+			</div>
 
-		</div> 
+			<div class="progress-bar bg-light text-black-50 w-25 border-right">
+				Features
+			</div>
+
+			<div class="progress-bar bg-light text-black-50 w-25 border-right">
+				Usage
+			</div>
+
+			<div class="progress-bar bg-light text-black-50 w-25">
+				Results
+			</div>
+
+		</div>
 
 		<h2 class="mt-4 mb-3">Let us know how much you're going to spend</h2>
 
-		<div class="container d-flex flex-wrap budgetMainContent">
+		<div class="container d-flex flex-wrap budgetMainContent justify-content-center">
 
-			<div class="col-sm-6 text-center">
-				<img class="budgetLogo" src="img/cash.png" alt="Budget" width="300">
+			<div class="col-sm-12 text-center">
+				<svg width="150px" version="1.1" viewBox="0 0 512 512"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="m196 169.6c-5.0977 0-10.5 0-15.902 0.59766h-0.89844c-98.398 9.3008-179.2 102.7-179.2 206.8 0 120.9 112.3 135 196 135 83.102 0 180-12.598 193.5-111.9 14.098-116.4-78.301-230.5-193.5-230.5z"
+						fill="#666" />
+					<path d="m389.5 400.1c-13.5 99.301-110.4 111.9-193.5 111.9v-342.4c115.2 0 207.6 114.1 193.5 230.5z"
+						fill="#808080" />
+					<path d="m300.1 49.801-30 91h-148.2l-30-91c-1.8047-4.5-0.90234-9.6016 1.7969-13.5 3-3.8984 7.5-6.3008 12.301-6.3008h47.699c6-17.402 22.801-30 42.301-30s36 12.598 42.301 30h47.699c4.8008 0 9.3008 2.4023 12.301 6.3008 2.6992 3.8984 3.6016 9 1.7969 13.5z"
+						fill="#666" />
+					<path d="m300.1 49.801-30 91h-74.098v-140.8c19.5 0 36 12.598 42.301 30h47.699c4.8008 0 9.3008 2.4023 12.301 6.3008 2.6992 3.8984 3.6016 9 1.7969 13.5z"
+						fill="#808080" />
+					<path d="m240.7 381.5c0 19.5-12.297 35.699-29.699 42v13.5c0 8.4023-6.5977 15-15 15s-15-6.5977-15-15v-13.199c-17.402-6.3008-30.301-22.801-30.301-42.301 0-8.3984 6.8984-15 15-15 8.4023 0 15 6.6016 15 15 0 8.1016 6.8984 15 15 15h0.30078c8.4023-0.30078 14.699-6.8984 14.699-15 0-8.3984-6.2969-14.699-14.699-15h-0.30078c-24.598 0-45-20.402-45-45 0-19.801 12.902-36.301 30.301-42.301v-22.199c0-8.4023 6.5977-15 15-15s15 6.5977 15 15v22.199c17.402 6.3008 29.699 22.801 29.699 42.301 0 8.1016-6.5977 15-15 15-8.1016 0-15-6.8984-15-15 0-8.3984-6.2969-14.699-14.699-15h-0.30078c-8.1016 0-15 6.6016-15 15 0 8.1016 6.8984 15 15 15h0.30078c24.902 0.30078 44.699 20.102 44.699 45z"
+						fill="#ffda2d" />
+					<path d="m512 302c0 16.5-13.5 30-30 30l-76 30-75-30c-16.5 0-30-13.5-30-30s13.5-30 30-30h151c16.5 0 30 13.5 30 30z"
+						fill="#ffda2d" />
+					<path d="m512 302c0 16.5-13.5 30-30 30l-76 30v-90h76c16.5 0 30 13.5 30 30z"
+						fill="#fdbf00" />
+					<path d="m512 362c0 16.5-13.5 30-30 30l-76 30-75-30c-16.5 0-30-13.5-30-30s13.5-30 30-30h151c16.5 0 30 13.5 30 30z"
+						fill="#fdbf00" />
+					<path d="m512 362c0 16.5-13.5 30-30 30l-76 30v-90h76c16.5 0 30 13.5 30 30z"
+						fill="#ff9100" />
+					<path d="m512 422c0 16.5-13.5 30-30 30l-76 30-75-30c-16.5 0-30-13.5-30-30s13.5-30 30-30h151c16.5 0 30 13.5 30 30z"
+						fill="#ffda2d" />
+					<path d="m512 422c0 16.5-13.5 30-30 30l-76 30v-90h76c16.5 0 30 13.5 30 30z"
+						fill="#fdbf00" />
+					<path d="m512 482c0 16.5-13.5 30-30 30h-151c-16.5 0-30-13.5-30-30s13.5-30 30-30h151c16.5 0 30 13.5 30 30z"
+						fill="#fdbf00" />
+					<path d="m512 482c0 16.5-13.5 30-30 30h-76v-60h76c16.5 0 30 13.5 30 30z"
+						fill="#ff9100" />
+					<path d="m301 151c0 16.5-13.5 30-30 30h-150c-16.5 0-30-13.5-30-30s13.5-30 30-30h150c16.5 0 30 13.5 30 30z"
+						fill="#ffda2d" />
+					<g fill="#fdbf00">
+						<path
+							d="m240.7 381.5c0 19.5-12.297 35.699-29.699 42v13.5c0 8.4023-6.5977 15-15 15v-55.5c8.4023-0.30078 14.699-6.8984 14.699-15 0-8.3984-6.2969-14.699-14.699-15v-30c24.902 0.30078 44.699 20.102 44.699 45z" />
+						<path
+							d="m240.7 321.5c0 8.1016-6.5977 15-15 15-8.1016 0-15-6.8984-15-15 0-8.3984-6.2969-14.699-14.699-15v-64.5c8.4023 0 15 6.5977 15 15v22.199c17.402 6.3008 29.699 22.801 29.699 42.301z" />
+						<path
+							d="m301 151c0 16.5-13.5 30-30 30h-75v-60h75c16.5 0 30 13.5 30 30z" />
+					</g>
+				</svg>
 			</div>
 
-			<div class="col-sm-6">
-				<div class="row justify-content-center ml-2">
-					<div class="column no-right-pad-mar">
-						<form id="form" class="no-right-pad-mar" method="get"
-							action="features.html">
-							<span class="input-caption">$</span>
-							<input type="number" min="80" max="900" step="10" name="budget"
-								class="inp no-right-pad-mar" placeholder="" value="280">
-							<input type="hidden" name="range" id="range" value="10">
-						</form>
-					</div>
-					<div class="column">
-						<div class="container pmprice">
-							<div id="+/-$10" class="blacktext">+/-$10 <img
-									src="./img/tick.png">
-							</div>
-							<div id="+/-$20" class="graytext">+/-$20 <img
-									src="./img/tick.png">
-							</div>
-							<div id="+/-$50" class="graytext">+/-$50 <img
-									src="./img/tick.png">
-							</div>
-						</div>
-					</div>
-				</div>
+			<div class="col-sm-10 text-center mt-4">
+				<form id="form" class="no-right-pad-mar" method="get" action="features.html">
+					<input id="amount" class="mb-3" type="text" name="budget" readonly>$
+					<div id="slider-range-max"></div>
+				</form>
 			</div>
 
 		</div>
 
 		<div class="container d-flex flex-wrap justify-content-around mt-5">
 
-			<button id="backButton" type="button" class="btn btn-info mb-2 backButton">
+			<button id="backButton" type="button" class="btn btn-dark mb-2 backButton">
 
-				<svg class="leftArrow" enable-background="new 0 0 491.398 491.398" version="1.1" viewBox="0 0 491.4 491.4"
-					xmlns="http://www.w3.org/2000/svg">
+				<svg class="leftArrow" enable-background="new 0 0 491.398 491.398" version="1.1"
+					viewBox="0 0 491.4 491.4" xmlns="http://www.w3.org/2000/svg">
 					<path fill="#fff"
 						d="m481.76 220.42-205.29-205.3c-16.967-16.918-44.557-16.942-61.559 0.023l-205.29 205.28c-12.835 12.833-12.835 33.65 0 46.483 12.843 12.842 33.646 12.842 46.487 0l27.828-27.832v214.87c0 19.343 15.682 35.024 35.027 35.024h74.826v-97.62c0-7.584 6.146-13.741 13.743-13.741h76.352c7.59 0 13.739 6.157 13.739 13.741v97.621h74.813c19.346 0 35.027-15.681 35.027-35.024v-214.86l27.812 27.815c6.425 6.421 14.833 9.63 23.243 9.63 8.408 0 16.819-3.209 23.242-9.63 12.844-12.834 12.844-33.65 0-46.484z" />
 				</svg>
@@ -76,7 +94,7 @@
 
 			</button>
 
-			<button id="submit" type="submit" class="btn btn-danger mb-2 nextButton">
+			<button id="submit" type="submit" class="btn btn-warning mb-2 nextButton">
 
 				Next step
 				<svg class="rightArrow" enable-background="new 0 0 16 16" viewBox="0 0 16 16">

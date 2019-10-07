@@ -65,59 +65,94 @@ $(document).ready(function () {
 		}
 	});
 
+	// Register JS
+	if (document.getElementById('register_page')) {
+
+		$("#registerButton").on("click", null, function () {
+
+			var username = $("#username").val();
+			var password = $("#password").val();
+
+			// Ajax register
+			$.ajax({
+
+				type: "POST",
+				timeout: 30000,
+				url: "ajax/register.html",
+				data: {
+					action: "register",
+					username: username,
+					password: password
+				}
+
+			}).always(function (registerResponse) {
+
+				if(registerResponse=="success") {
+					alert("Registration successful!");
+					$("#home").click();
+				} else if(registerResponse=="usernameExists") {
+
+					if(($("h5")).hasClass("d-none"))
+						$("h5.d-none").removeClass("d-none").effect("shake");
+					else {
+						$("h5.shake").effect("shake");
+					}
+
+				}
+
+			});
+
+		});
+
+	}
+
+	// Login JS
+	if (document.getElementById('login_page')) {
+
+		$("#loginButton").on("click", null, function () {
+
+			var username = $("#username").val();
+			var password = $("#password").val();
+
+			// Ajax register
+			$.ajax({
+
+				type: "POST",
+				timeout: 30000,
+				url: "ajax/login.html",
+				data: {
+					action: "login",
+					username: username,
+					password: password
+				}
+
+			}).always(function (loginResponse) {
+
+				if(loginResponse=="success") {
+					alert("Log in successful!");
+					$("#home").click();
+				}
+
+			});
+
+		});
+
+	}
+
 	// Budget JS
 	if (document.getElementById('budget_page')) {
 
-		document.getElementById("+/-$10").onclick = function () {
-			TenRange()
-		};
-
-		function TenRange() {
-			document.getElementById("range").value = '10';
-			document.getElementById("+/-$10").innerHTML = '+/-$10 <img src="./img/tick.png" style="height: 20px; display: inline;">';
-			document.getElementById("+/-$10").classList.add('blacktext');
-			document.getElementById("+/-$10").classList.remove('graytext');
-			document.getElementById("+/-$20").innerHTML = '+/-$20 <img src="./img/tick.png" style="height: 20px; display: none;">';
-			document.getElementById("+/-$20").classList.add('graytext');
-			document.getElementById("+/-$20").classList.remove('blacktext');
-			document.getElementById("+/-$50").innerHTML = '+/-$50 <img src="./img/tick.png" style="height: 20px; display: none;">';
-			document.getElementById("+/-$50").classList.add('graytext');
-			document.getElementById("+/-$50").classList.remove('blacktext');
-		}
-
-		document.getElementById("+/-$20").onclick = function () {
-			TwentyRange()
-		};
-
-		function TwentyRange() {
-			document.getElementById("range").value = '20';
-			document.getElementById("+/-$20").innerHTML = '+/-$20 <img src="./img/tick.png" style="height: 20px; display: inline;">';
-			document.getElementById("+/-$20").classList.add('blacktext');
-			document.getElementById("+/-$20").classList.remove('graytext');
-			document.getElementById("+/-$10").innerHTML = '+/-$10 <img src="./img/tick.png" style="height: 20px; display: none;">';
-			document.getElementById("+/-$10").classList.add('graytext');
-			document.getElementById("+/-$10").classList.remove('blacktext');
-			document.getElementById("+/-$50").innerHTML = '+/-$50 <img src="./img/tick.png" style="height: 20px; display: none;">';
-			document.getElementById("+/-$50").classList.add('graytext');
-			document.getElementById("+/-$50").classList.remove('blacktext');
-		}
-
-		document.getElementById("+/-$50").onclick = function () {
-			FiftyRange()
-		};
-
-		function FiftyRange() {
-			document.getElementById("range").value = '50';
-			document.getElementById("+/-$50").innerHTML = '+/-$50 <img src="./img/tick.png" style="height: 20px; display: inline;">';
-			document.getElementById("+/-$50").classList.add('blacktext');
-			document.getElementById("+/-$50").classList.remove('graytext');
-			document.getElementById("+/-$10").innerHTML = '+/-$10 <img src="./img/tick.png" style="height: 20px; display: none;">';
-			document.getElementById("+/-$10").classList.add('graytext');
-			document.getElementById("+/-$10").classList.remove('blacktext');
-			document.getElementById("+/-$20").innerHTML = '+/-$20 <img src="./img/tick.png" style="height: 20px; display: none;">';
-			document.getElementById("+/-$20").classList.add('graytext');
-			document.getElementById("+/-$20").classList.remove('blacktext');
-		}
+		$("#slider-range-max").slider({
+			range: "min",
+			min: 80,
+			max: 900,
+			value: 200,
+			step: 10,
+			slide: function (event, ui) {
+				$("#amount").val(ui.value);
+			}
+		});
+		$("#amount").val($("#slider-range-max").slider("value"));
 
 		document.getElementById("submit").onclick = function () {
 			SubmitForm();

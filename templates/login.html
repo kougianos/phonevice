@@ -1,21 +1,18 @@
 {include file='header.html'}
 
-<body class="singin_body text-center">
+<body id="login_page" class="singin_body text-center">
 
 	<form class="form-signin">
-		<img class="mb-3" src="./img/logo.png" alt="" height="72">
-		<h1 class="h3 mb-3 font-weight-normal text-white">Please sign in</h1>
-		<label for="inputEmail" class="sr-only">Email address</label>
-		<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
-		<label for="inputPassword" class="sr-only">Password</label>
-		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-		<div class="checkbox mb-3">
-			<label class="text-white">
-				<input type="checkbox" value="remember-me"> Remember me
-			</label>
-		</div>
-		<button class="btn btn-lg btn-danger btn-block mb-3" type="submit">Sign in</button>
-		<a href=# class="text-white">Dont have an account? Register here</a>
+		<a href="index.html"><img id="home" src="img/logo.png" alt="Phonevice" width="210"></a>
+		<h1 class="h3 mb-3 font-weight-normal text-white">Sign in</h1>
+		<label for="username" class="sr-only">Username</label>
+		<input type="text" id="username" class="form-control" placeholder="Username" required>
+		<label for="password" class="sr-only">Password</label>
+		<input type="password" id="password" class="form-control" placeholder="Password" required>
+		<button type="button" id="loginButton" class="btn btn-lg btn-warning btn-block mb-3">Sign in</button>
+		<a href=register.html class="text-white">Dont have an account? Register here</a>
 	</form>
 
 </body>
+
+{include file='footer.html'}
