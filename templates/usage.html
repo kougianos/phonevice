@@ -32,51 +32,44 @@
 
 			<div class="row">
 
-				<div class="col-sm-6 mt-4 mb-4 border-right border-dark">
+				<div id="basicUse" class="col-sm-6 mt-4 mb-4 border-right border-dark">
 
 					<div class="col-sm-12 mt-2 text-center">
 						<h4>Basic Use</h4>
 					</div>
 
-					<div class="col-sm-12"
-						style="border: 2px solid black; background-color: #fffa47">
-						<img src="img/cash.png" alt="basic use" class="w-100">
+					<div class="col-sm-12 usageSvgContainer bg-success rounded">
+						<img src="img/svg/basicUse.svg" alt="basic use" height="150" class="">
 					</div>
 
-					<div class="col-sm-12 p-4 mt-3" style=" border: 2px solid cadetblue;">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco
+					<div class="col-sm-12 p-4 mt-3">
+						Everyday use. A little bit of everything. Social media, gaming, photos, video streaming etc. are things you will be doing on a daily basis with your phone, but none of them is really important for you. <strong>Finds phones with an all around good performance.</strong>
 					</div>
 
 					<div class="col-sm-12 mt-5">
-						<form action="results.html" method="get">
-							<button class="btn btn-basic">Basic</button>
+						<form id="basicForm" action="results.html" method="get">
+							<button class="btn btn-success">Basic</button>
 						</form>
 					</div>
 
 				</div>
 
-				<div class="col-sm-6 mt-4 mb-4">
+				<div id="customUse" class="col-sm-6 mt-4 mb-4">
 
 					<div class="col-sm-12 mt-2 text-center">
 						<h4>Custom Use</h4>
 					</div>
 
-					<div class="col-sm-12"
-						style="border: 2px solid black;  background-color: #f26c4f"">
-						<img src=" img/cash.png" alt="basic use" class="w-100">
+					<div class="col-sm-12 usageSvgContainer bg-primary rounded">
+						<img src="img/svg/customUse.svg" alt="custom use" height="150" class="">
 					</div>
 
-					<div class="col-sm-12 p-4 mt-3" style=" border: 2px solid cadetblue;">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco
+					<div class="col-sm-12 p-4 mt-3">
+						Custom use. Are you a hardcore gamer? Do you like watching videos all day on your smartphone? Or are you a social media person who can't live without their favorite social apps? <br><strong>Finds phones based on types of use.</strong>
 					</div>
 
 					<div class="col-sm-12 mt-5">
-						<button id="btn-custom" class="btn btn-custom" data-toggle="collapse"
-							data-target="#usageForm">Custom</button>
+						<button class="btn btn-primary" data-target="#usageForm">Custom</button>
 					</div>
 
 				</div>
@@ -171,10 +164,7 @@
 
 			<button id="backButton" type="button" class="btn btn-dark mb-2 backButton">
 
-				<svg class="leftArrow" enable-background="new 0 0 16 16" viewBox="0 0 16 16">
-					<path d="M8,4.809V2.25c0-0.256-0.098-0.512-0.293-0.708C7.512,1.347,7.256,1.25,7,1.25   S6.488,1.347,6.293,1.542L0,7.75l6.293,6.207C6.488,14.152,6.744,14.25,7,14.25s0.512-0.098,0.707-0.293S8,13.505,8,13.25v-2.489   c2.75,0.068,5.755,0.566,8,3.989v-1C16,9.117,12.5,5.307,8,4.809z"
-						fill="#fff" />
-				</svg>
+				<img src="img/svg/leftArrow.svg" alt="back" class="leftArrow">
 				Previous step
 
 			</button>
@@ -183,13 +173,7 @@
 
 				Results!
 
-				<svg class="rightArrow" enable-background="new 0 0 450 450" version="1.1"
-					viewBox="0 0 450 450" xmlns="http://www.w3.org/2000/svg">
-					<path fill="#fff"
-						d="m87.945 75.913c-1.877-7.41-9.408-11.893-16.818-10.018-7.413 1.879-11.897 9.409-10.019 16.821l90.439 356.84c1.589 6.271 7.224 10.446 13.409 10.446 1.127 0 2.271-0.139 3.413-0.428 7.409-1.877 11.895-9.409 10.017-16.819l-90.441-356.84z" />
-					<path fill="#fff"
-						d="m388.98 176.42c-14.739-54.423-29.492-108.84-44.234-163.26-1.598-5.891-4.399-12.21-14.929-12.842-82.888-6.003-137.31 76.542-220.2 70.538-6.541-0.806-10.745 2.6-9.148 8.491 14.743 54.422 29.372 108.88 44.233 163.27 2.385 8.729 8.388 12.035 14.931 12.842 82.887 6.004 137.32-76.541 220.2-70.537 6.54 0.804 10.742-2.601 9.145-8.493zm-65.046-155.56c4.066 15.015 8.138 30.029 12.204 45.044-17.436 0.574-32.825 4.092-49.132 10.203-4.065-15.015-8.137-30.03-12.202-45.044 16.305-6.109 31.694-9.63 49.13-10.203zm-170.8 168.34c-4.627-17.059-9.246-34.122-13.868-51.182 18.328-0.531 34.591-4.503 51.602-11.227-4.07-15.015-8.138-30.03-12.204-45.045 16.629-7.433 32.314-16.332 48.022-25.523 4.066 15.014 8.138 30.029 12.205 45.044-15.709 9.19-31.395 18.092-48.023 25.524 4.623 17.06 9.244 34.122 13.866 51.182-17.012 6.723-33.273 10.695-51.6 11.227zm63.984 34.477c-4.129-15.234-8.256-30.47-12.384-45.706 16.513-7.377 32.087-16.201 47.683-25.327 4.128 15.236 8.256 30.471 12.383 45.707-15.594 9.127-31.17 17.949-47.682 25.326zm35.636-71.229c-4.619-17.061-9.242-34.122-13.863-51.183 15.706-9.17 31.403-17.945 48.119-25.157 4.624 17.06 9.246 34.121 13.867 51.181-16.713 7.214-32.415 15.988-48.123 25.159zm60.795 20.431c-4.129-15.234-8.256-30.47-12.385-45.706 16.211-6.045 31.521-9.521 48.843-10.086 4.129 15.236 8.257 30.471 12.386 45.705-17.323 0.566-32.635 4.041-48.844 10.087z" />
-				</svg>
+				<img src="img/svg/finishLine.svg" alt="back" class="rightArrow">
 
 			</button>
 		</div>

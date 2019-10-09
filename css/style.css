@@ -10,7 +10,6 @@ body {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	background: #fffbe9;
 }
 
 footer {
@@ -31,10 +30,16 @@ a {
 	position: relative;
 }
 
-svg.leftArrow {
+img.leftArrow {
 	width: 25px;
 	position: absolute;
 	left: 10px;
+}
+
+img.rightArrow {
+	width: 25px;
+	position: absolute;
+	right: 10px;
 }
 
 /* Non selectable stuff */
@@ -57,12 +62,6 @@ img,
 	-ms-user-select: none;
 	/* Internet Explorer/Edge */
 	user-select: none;
-}
-
-svg.rightArrow {
-	width: 25px;
-	position: absolute;
-	right: 10px;
 }
 
 .jumbotronCustom {
@@ -432,6 +431,14 @@ nav .navbar-nav .dropdown-menu {
 
 }
 
+.usageSvgContainer {
+	border: 2px solid black; 
+}
+
+#usageChoiceContainer .col-sm-6 {
+	cursor: pointer;
+}
+
 /*---------------------------------------------------------------------------------------------*/
 /* results.html */
 
@@ -488,7 +495,7 @@ nav .navbar-nav .dropdown-menu {
 	width: 40px;
 	height: 40px;
 	border-radius: 25px;
-	background-color: #dc3545;
+	background-color: #343a40;
 
 }
 

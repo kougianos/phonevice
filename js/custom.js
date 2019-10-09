@@ -242,11 +242,17 @@ $(document).ready(function () {
 	// Usage JS
 	if (document.getElementById('usage_page')) {
 
-		// Hide usage choice container on custom button click
-		$('#btn-custom').on('click', null, function () {
+		// Click basic use button when user clicks anywhere on the container
+		$('#basicUse').on('click', null, function () {
+			$('#basicForm').submit();
+		});
+
+		// Click basic use button when user clicks anywhere on the container
+		$('#customUse').on('click', null, function () {
+			$('#btn-custom').trigger("click");
 			$('#usageChoiceContainer').hide("slow");
 			$('#resultsButton').attr("disabled", false);
-
+			$('#usageForm').toggle("slow");
 		});
 
 		// Submit form on button click
