@@ -1,0 +1,40 @@
+{include file='header.html'}
+
+<body id="database_page">
+
+	{include file='navbar.html'}
+
+	<div class="container-fluid mb-5 px-1">
+
+		<h2 class="mt-5 mb-3 text-center">Smartphone database</h2>
+
+		<div class="container row" class="input-group mb-3">
+
+			<div class="col-md-6 p-0">
+				<input id="brands" type="search" class="form-control"
+					placeholder="Search by brand name">
+			</div>
+
+			<div class="col-md-6 mt-md-0 mt-3">
+				<input id="models" type="search" class="form-control"
+					placeholder="Search by model name">
+			</div>
+
+			<button class="btn btn-warning mt-4">
+				Complete database
+			</button>
+		</div>
+
+		<div class="row p-5">
+
+			{foreach $BRANDS as $B}
+			{$B} <br>
+			{/foreach}
+
+		</div>
+
+	</div>
+
+</body>
+
+{include file='footer.html'}

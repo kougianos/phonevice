@@ -51,6 +51,26 @@ $(document).ready(function () {
 
 	});
 
+	// Log out button
+	$('#logout').on('click', null, function () {
+
+		// Ajax register
+		$.ajax({
+
+			type: "GET",
+			timeout: 30000,
+			url: "ajax/logout.html"
+
+		}).always(function (response) {
+
+			if (response == "success") {
+				document.location.reload(true);
+			}
+
+		});
+
+	});
+
 	// Search bar autocomplete
 	$("#searchBar").autocomplete({
 		source: "ajax/autocomplete.html",
@@ -59,9 +79,7 @@ $(document).ready(function () {
 		minLength: 2,
 		select: function (event, ui) {
 			console.log(ui.item.value, ui.item.id, ui.item.label);
-			// $("#phoneID").attr('value', ui.item.id);
 			$("#phoneID").val(ui.item.id);
-
 		}
 	});
 
@@ -87,12 +105,12 @@ $(document).ready(function () {
 
 			}).always(function (registerResponse) {
 
-				if(registerResponse=="success") {
+				if (registerResponse == "success") {
 					alert("Registration successful!");
 					$("#home").click();
-				} else if(registerResponse=="usernameExists") {
+				} else if (registerResponse == "usernameExists") {
 
-					if(($("h5")).hasClass("d-none"))
+					if (($("h5")).hasClass("d-none"))
 						$("h5.d-none").removeClass("d-none").effect("shake");
 					else {
 						$("h5.shake").effect("shake");
@@ -102,6 +120,13 @@ $(document).ready(function () {
 
 			});
 
+		});
+
+		$('#register_page').keypress(function (e) {
+			if (e.which == 13) {
+				$('#registerButton').click();
+				return false;
+			}
 		});
 
 	}
@@ -128,13 +153,40 @@ $(document).ready(function () {
 
 			}).always(function (loginResponse) {
 
-				if(loginResponse=="success") {
+				if (loginResponse == "success") {
 					alert("Log in successful!");
 					$("#home").click();
+				} else if (loginResponse == "wrongPass") {
+
+					($("h5.notFound")).addClass("d-none");
+
+					if (($("h5.wrongPass")).hasClass("d-none"))
+						$("h5.wrongPass").removeClass("d-none").effect("shake");
+					else {
+						$("h5.wrongPass").effect("shake");
+					}
+
+				} else if (loginResponse == "usernameNotFound") {
+
+					($("h5.wrongPass")).addClass("d-none");
+
+					if (($("h5.notFound")).hasClass("d-none"))
+						$("h5.notFound").removeClass("d-none").effect("shake");
+					else {
+						$("h5.notFound").effect("shake");
+					}
+
 				}
 
 			});
 
+		});
+
+		$('#login_page').keypress(function (e) {
+			if (e.which == 13) {
+				$('#loginButton').click();
+				return false;
+			}
 		});
 
 	}
@@ -379,84 +431,14 @@ $(document).ready(function () {
 	// Results JS
 	if (document.getElementById('results_page')) {
 
-		$('#collapse2').hide();
-		$('#collapse3').hide();
-		$('#phone2').hide();
-		$('#phone3').hide();
-		$('.1st').addClass('green-circle');
-		$('.reset').hide();
-		$('.modal-backdrop').remove();
+		
 
-		$("#compare_button").click(function () {
-			$("#collapse1").hide();
-			$("#collapse2").show();
-			$("#collapse3").hide();
-			$('.reset').show();
-		});
+	}
 
-		$("#compare_button2").click(function () {
-			$("#collapse1").hide();
-			$("#collapse2").show();
-			$("#collapse3").hide();
-			$('.reset').show();
-			$('#current_phone_search').modal('hide');
-		});
+	// Smartphone-database JS
+	if (document.getElementById('database_page')) {
 
-		$("#accessories").click(function () {
-			$("#collapse1").hide();
-			$("#collapse2").hide();
-			$("#collapse3").show();
-			$('.reset').show();
-		});
-
-		$(".reset").click(function () {
-			$("#collapse1").show();
-			$('#collapse2').hide();
-			$('#collapse3').hide();
-			$('.reset').hide();
-		});
-
-		$(".to-phone-1").click(function () {
-			$("#phone1").show();
-			$('#phone2').hide();
-			$('#phone3').hide();
-			$('.1st').addClass('green-circle');
-			$('.2nd').removeClass('green-circle');
-			$('.3rd').removeClass('green-circle');
-		});
-
-		$(".to-phone-2").click(function () {
-			$("#phone1").hide();
-			$('#phone2').show();
-			$('#phone3').hide();
-			$('.1st').removeClass('green-circle');
-			$('.2nd').addClass('green-circle');
-			$('.3rd').removeClass('green-circle');
-		});
-
-		$(".to-phone-3").click(function () {
-			$("#phone1").hide();
-			$('#phone2').hide();
-			$('#phone3').show();
-			$('.1st').removeClass('green-circle');
-			$('.2nd').removeClass('green-circle');
-			$('.3rd').addClass('green-circle');
-		});
-
-		$('#modal_phone1').click(function () {
-			$('#current_phone_search').modal('hide');
-			alert('Phone 1 selected');
-		});
-
-		$('#modal_phone2').click(function () {
-			$('#current_phone_search').modal('hide');
-			alert('Phone 2 selected');
-		});
-
-		$('#modal_phone3').click(function () {
-			$('#current_phone_search').modal('hide');
-			alert('Phone 3 selected');
-		});
+		
 
 	}
 

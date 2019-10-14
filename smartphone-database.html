@@ -1,0 +1,9 @@
+<?php
+
+// Basic configuration
+require_once("./services/configuration.php");
+
+// Smartphones database
+require_once("./services/smartphone-database.php");
+
+$smarty->display('smartphone-database.html', $_action);

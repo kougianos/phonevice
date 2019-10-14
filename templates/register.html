@@ -1,17 +1,27 @@
 {include file='header.html'}
 
-<body id="register_page" class="singin_body text-center">
+<body id="register_page" class="bg-dark">
 
-	<form class="form-signin">
-		<a href="index.html"><img id="home" src="img/logo.png" alt="Phonevice" width="210"></a>
-		<h1 class="h3 mb-3 font-weight-normal text-white">Register</h1>
-		<label for="username" class="sr-only">Username</label>
-		<input type="text" id="username" class="form-control" placeholder="Username" required>
-		<label for="password" class="sr-only">Password</label>
-		<input type="password" id="password" class="form-control" placeholder="Password" required>
-		<button type="button" id="registerButton" class="btn btn-lg btn-warning btn-block mb-3">Register</button>
-		<h5 class="text-danger d-none shake my-3">This username already exists!</h5>
-	</form>
+	<div class="container mt-auto">
+
+		<div class="row justify-content-center">
+
+			<form class="form-signin position-relative">
+				<a href="index.html"><img id="home" src="img/logo.png" alt="Phonevice" width="210"></a>
+				<h1 class="h3 text-center mb-3 font-weight-normal text-white">Register</h1>
+				<label for="username" class="sr-only mb-1">Username</label>
+				<input type="text" id="username" class="form-control mb-1" placeholder="Username" required>
+				<label for="password" class="sr-only mb-1">Password</label>
+				<input type="password" id="password" class="form-control mb-1" placeholder="Password"
+					required>
+				<button type="button" id="registerButton"
+					class="btn btn-lg btn-warning btn-block mb-3">Register</button>
+				<h5 class="text-danger d-none shake my-3">This username already exists!</h5>
+			</form>
+
+		</div>
+
+	</div>
 
 </body>
 

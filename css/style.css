@@ -1,3 +1,12 @@
+.bg-lightgrey {
+	background: #d9d9d9;
+}
+
+#logout:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 /* index.html */
 html {
 	height: 100%;
@@ -235,23 +244,6 @@ nav .navbar-nav .dropdown-menu {
 /*---------------------------------------------------------------------------------------------*/
 /* login.html / register.html */
 
-.singin_body {
-	height: 100%;
-	display: -ms-flexbox;
-	display: -webkit-box;
-	display: flex;
-	-ms-flex-align: center;
-	-ms-flex-pack: center;
-	-webkit-box-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	justify-content: center;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	background-color: #343a40;
-
-}
-
 .form-signin {
 	width: 100%;
 	max-width: 330px;
@@ -285,6 +277,12 @@ nav .navbar-nav .dropdown-menu {
 	margin-bottom: 10px;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
+}
+
+#register_page .shake {
+	position: absolute;
+	bottom: -15px;
+	left: 30px;
 }
 
 
@@ -432,7 +430,7 @@ nav .navbar-nav .dropdown-menu {
 }
 
 .usageSvgContainer {
-	border: 2px solid black; 
+	border: 2px solid black;
 }
 
 #usageChoiceContainer .col-sm-6 {

@@ -37,10 +37,11 @@
 		<div class="col-xs-12 col-lg-6 mt-3 mt-lg-0 text-center">
 
 			{if isset($USER)}
-			{$USER['username']}
-			{/if}
-
+			<span class="text-white font-weight-bold mr-2">{$USER['username']}</span>
+			<span id="logout" class="text-warning">Logout</span>
+			{else}
 			<a href="login.html" class="btn btn-warning my-2 my-sm-0">Log in/Sign up</a>
+			{/if}
 
 		</div>
 
