@@ -40,11 +40,11 @@
 
 						<span class="mb-1 mb-lg-0 line-height-x" data-toggle="tooltip"
 							data-placement="top"
-							title="Short Description about this option">{$F}</span> <br>
+							title="Short Description about this option">{$F[2]}</span> <br>
 
-						<img id="{$F}" class="featureImage" src="img/3g4g.png" alt="{$F}" width="150">
+						<img id="{$F@key}" class="featureImage" src="{$F[1]}" alt="{$F[2]}" width="150">
 
-						<input class="d-none" type="checkbox" name="features[]" value="{$F}">
+						<input class="d-none" type="checkbox" name="features[]"	value="{$F@key}">
 
 					</div>
 					{/foreach}

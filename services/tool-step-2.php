@@ -8,7 +8,7 @@ if (!isset($_SESSION['phones']) || sizeof($_SESSION['phones']) < 3)
 if (isset($_GET['features'])) {
 
 	// Validation (check that requested features are part of the initial features array)
-	if (array_intersect($_GET['features'], array_values($_SESSION['initial_features'])) != $_GET['features'])
+	if (array_intersect($_GET['features'], array_keys($_SESSION['initial_features'])) != $_GET['features'])
 		header("Location: index.html");
 
 	// Loop phones and unset those that don't have the requested features

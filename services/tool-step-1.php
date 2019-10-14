@@ -52,18 +52,18 @@ while(1) {
 
 }
 
-// Initial features array @TODO make it multi dimensional array where every element has count and img URL
+// Initial features array with feature count, img URL and feature name as array elements
 $initialFeatures = array(
 
-	'microSD'		=>	0,
-	'nfc'			=>	0,
-	'dualSim'		=>	0,
-	'radio'			=>	0,
-	'fastCharging'		=>	0,
-	'wirelessCharging'	=>	0,
-	'headphoneJack'		=>	0,
-	'fingerprintSensor'	=>	0,
-	'waterproof'		=>	0
+	'microSD'		=>	array(0, "img/features/storage.png", "Storage expansion"),
+	'nfc'			=>	array(0, "img/features/nfc.png", "NFC"),
+	'dualSim'		=>	array(0, "img/features/dualsim.png", "Dual SIM"),
+	'radio'			=>	array(0, "img/features/radio.png", "Radio"),
+	'fastCharging'		=>	array(0, "img/features/fastcharging.png", "Fast Charging"),
+	'wirelessCharging'	=>	array(0, "img/features/wirelesscharging.png", "Wireless Charging"),
+	'headphoneJack'		=>	array(0, "img/features/headphone.png", "Headphone Jack"),
+	'fingerprintSensor'	=>	array(0, "img/features/fingerprint.png", "Fingerprint Sensor"),
+	'waterproof'		=>	array(0, "img/features/waterproof.png", "Waterproof")
 
 );
 
@@ -73,41 +73,41 @@ foreach($_SESSION['phones'] as $key => $phone) {
 	$_SESSION['phones'][$key]['available_features'] = array();
 
 	if(isset($phone['summary']['expansion'])) {
-		$initialFeatures['microSD']++;
+		$initialFeatures['microSD'][0]++;
 		$_SESSION['phones'][$key]['available_features'][] = "microSD";
 	}
 	if(isset($phone['comms']['connectivity']) && in_array("NFC", $phone['comms']['connectivity'])) {
-		$initialFeatures['nfc']++;
+		$initialFeatures['nfc'][0]++;
 		$_SESSION['phones'][$key]['available_features'][] = "nfc";
 	}
 	if(isset($phone['sim']['slots']) && $phone['sim']['slots']==2) {
-		$initialFeatures['dualSim']++;
+		$initialFeatures['dualSim'][0]++;
 		$_SESSION['phones'][$key]['available_features'][] = "dualSim";
 	}
 	if(isset($phone['comms']['radio']) && $phone['comms']['radio']==true) {
-		$initialFeatures['radio']++;
+		$initialFeatures['radio'][0]++;
 		$_SESSION['phones'][$key]['available_features'][] = "radio";
 	}
 	if(isset($phone['battery']['charge_quick']) && $phone['battery']['charge_quick']==true) {
-		$initialFeatures['fastCharging']++;
+		$initialFeatures['fastCharging'][0]++;
 		$_SESSION['phones'][$key]['available_features'][] = "fastCharging";
 	}
 	if(isset($phone['battery']['charge_wireless']) && $phone['battery']['charge_wireless']==true) {
-		$initialFeatures['wirelessCharging']++;
+		$initialFeatures['wirelessCharging'][0]++;
 		$_SESSION['phones'][$key]['available_features'][] = "wirelessCharging";
 	}
 	if(isset($phone['multimedia']['3mm_jack']) && $phone['multimedia']['3mm_jack']==true) {
-		$initialFeatures['headphoneJack']++;
+		$initialFeatures['headphoneJack'][0]++;
 		$_SESSION['phones'][$key]['available_features'][] = "headphoneJack";
 	}
 	if(isset($phone['sensors']['biometric'])) {
 		if(in_array("Fingerprint", $phone['sensors']['biometric'])) {
-			$initialFeatures['fingerprintSensor']++;
+			$initialFeatures['fingerprintSensor'][0]++;
 			$_SESSION['phones'][$key]['available_features'][] = "fingerprintSensor";
 		}
 	}
 	if(isset($phone['summary']['waterproof'])) {
-		$initialFeatures['waterproof']++;
+		$initialFeatures['waterproof'][0]++;
 		$_SESSION['phones'][$key]['available_features'][] = "waterproof";
 	}
 
@@ -115,9 +115,9 @@ foreach($_SESSION['phones'] as $key => $phone) {
 
 // Assign initial features on session
 $_SESSION['initial_features'] = array();
-foreach($initialFeatures as $key => $feature) {
+foreach ($initialFeatures as $key => $feature) {
 
-	if($feature>=3)
-		$_SESSION['initial_features'][$key] = $key;
+	if ($feature[0] >= 3)
+		$_SESSION['initial_features'][$key] = $feature;
 
 }

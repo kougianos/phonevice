@@ -11,9 +11,10 @@ if (!isset($_POST['features'])) {
 	echo "none-selected";
 	exit();
 }
-
 // Create features to check and selected features arrays
-$featuresToCheck = $_SESSION['initial_features'];
+$featuresToCheck = array();
+foreach($_SESSION['initial_features'] as $key => $f)
+	$featuresToCheck[] = $key;
 $selectedFeatures = array();
 foreach ($_POST['features'] as $f) {
 	unset($featuresToCheck[$f['value']]);
