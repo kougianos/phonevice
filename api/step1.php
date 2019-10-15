@@ -71,7 +71,7 @@ $response['phone_ids'] = array();
 foreach($phones as $key => $phone) {
 
 	// Add phone id to response
-	$response['phone_ids'][] = $phone['_id']['$oid'];
+	$response['phone_ids'][] = $phone['_id'];
 
 	// Initialize available features empty array for each phone
 	$phones[$key]['available_features'] = array();

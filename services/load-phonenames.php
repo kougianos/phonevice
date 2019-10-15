@@ -9,6 +9,6 @@ $_SESSION['autocomplete'] = array();
 foreach($phones as $phone) {
 
 	$_SESSION['autocomplete']['names'][] = $phone['summary']['fullname'];
-	$_SESSION['autocomplete']['ids'][] = $phone['_id']['$oid'];
+	$_SESSION['autocomplete']['ids'][] = $phone['_id'];
 
 }

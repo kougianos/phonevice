@@ -431,14 +431,64 @@ $(document).ready(function () {
 	// Results JS
 	if (document.getElementById('results_page')) {
 
-		
+
 
 	}
 
 	// Smartphone-database JS
 	if (document.getElementById('database_page')) {
 
-		
+		// Brands autocomplete
+		$("#brands").autocomplete({
+			source: "ajax/smartphone-database.html",
+			autoFocus: true,
+			delay: 150,
+			minLength: 2,
+			select: function (event, ui) {
+
+				// Empty phones container before each brand selection
+				$("#phones").empty();
+
+				// Brands ajax
+				$.ajax({
+
+					type: "POST",
+					timeout: 30000,
+					url: "ajax/smartphone-database.html",
+					data: {
+						action: "brands",
+						brand: ui.item.value
+					}
+
+				}).always(function (response) {
+
+					$.each(response, function (index, value) {
+
+						console.log(index,value.label);
+						$("#phones").append(
+
+							"<span>"+value.label+"</span>"
+
+							);
+
+					});
+
+				});
+
+			}
+		});
+
+		// Models autocomplete
+		$("#models").autocomplete({
+			source: "ajax/autocomplete.html",
+			autoFocus: true,
+			delay: 150,
+			minLength: 2,
+			select: function (event, ui) {
+				console.log(ui.item.value, ui.item.id, ui.item.label);
+
+			}
+		});
 
 	}
 

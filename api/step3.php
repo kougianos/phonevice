@@ -28,7 +28,7 @@ $phones = json_decode(file_get_contents(__DIR__."/../database/dbApril2019.json")
 foreach($phones as $key => $phone) {
 
 	// Unset phones that are not in requested ids
-	if(!in_array($phone['_id']['$oid'], $_GET['phoneId'])) {
+	if(!in_array($phone['_id'], $_GET['phoneId'])) {
 		unset($phones[$key]);
 		continue;
 	}

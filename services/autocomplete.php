@@ -32,5 +32,6 @@ foreach($phonenames as $key => $name) {
 
 
 echo json_encode($response);
+// echo json_encode($_GET);
 
 exit();

@@ -18,7 +18,7 @@ $response['phone_ids'] = array();
 foreach($phones as $key => $phone) {
 
 	// Unset phones that are not in requested ids
-	if(!in_array($phone['_id']['$oid'], $_GET['phoneId'])) {
+	if(!in_array($phone['_id'], $_GET['phoneId'])) {
 		unset($phones[$key]);
 		continue;
 	}
@@ -34,7 +34,7 @@ foreach($phones as $key => $phone) {
 	}
 
 	// Add phone id to response array
-	$response['phone_ids'][] = $phone['_id']['$oid'];
+	$response['phone_ids'][] = $phone['_id'];
 
 }
 
