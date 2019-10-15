@@ -78,7 +78,6 @@ $(document).ready(function () {
 		delay: 150,
 		minLength: 2,
 		select: function (event, ui) {
-			console.log(ui.item.value, ui.item.id, ui.item.label);
 			$("#phoneID").val(ui.item.id);
 		}
 	});
@@ -462,14 +461,14 @@ $(document).ready(function () {
 
 				}).always(function (response) {
 
+					// Loop response and append each phone to #phones element
 					$.each(response, function (index, value) {
 
-						console.log(index,value.label);
 						$("#phones").append(
 
-							"<span>"+value.label+"</span>"
+							"<span>" + value.label + "</span>"
 
-							);
+						);
 
 					});
 
@@ -485,7 +484,16 @@ $(document).ready(function () {
 			delay: 150,
 			minLength: 2,
 			select: function (event, ui) {
-				console.log(ui.item.value, ui.item.id, ui.item.label);
+
+				// Empty phones container before each model selection
+				$("#phones").empty();
+
+				// Append phone to #phones element
+				$("#phones").append(
+
+					"<span>" + ui.item.value + "</span>"
+
+				);
 
 			}
 		});

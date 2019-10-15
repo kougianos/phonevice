@@ -1,0 +1,54 @@
+{include file='header.html'}
+
+<body id="faq_page" class="bg-dark">
+
+	{include file='navbar.html'}
+
+	<div class="container mt-4 text-white">
+
+		<h3 class="text-center text-white"><span class="text-warning">F</span>requently <span
+				class="text-warning">A</span>sked <span class="text-warning">Q</span>uestions</h3>
+
+		<h4 class="border-bottom pb-2 pt-4">Which technologies were used for the project?</h4>
+		<h5 class="font-weight-normal">
+			The technologies used for this project are PHP for the backend and HTML, CSS,
+			Javascript for the frontend. The project is hosted on Apache Server.
+		</h5>
+		<a class="btn btn-warning" data-toggle="collapse" href="#techDetails" role="button"
+			aria-expanded="false" aria-controls="techDetails">
+			Details
+		</a>
+		<div class="collapse mt-2" id="techDetails">
+			<div class="card card-body text-dark bg-lightgrey">
+				<strong>Backend:</strong> PHP7 
+				<strong>Frontend:</strong> HTML5, CSS3, Javascript, Jquery, Bootstrap 4
+				<strong>Database:</strong> MongoDB (MongoDB PHP driver for connection with PHP)
+				<strong>Template engine:</strong> PHP Smarty
+				<strong>Server:</strong> Apache
+			</div>
+		</div>
+
+		<h4 class="border-bottom pb-2 pt-4">How long did it take you to build it?</h4>
+		<h5 class="font-weight-normal">Around 20 man-days.</h5>
+
+		<h4 class="border-bottom pb-2 pt-4">What's its purpose?</h4>
+		<h5 class="font-weight-normal">This site offers a personalized smartphone recommendation based on 3 simple steps. Budget, features and types of use. An advanced recommendation algorithm takes place under the hood, that will always suggest the top 3 smartphones on the results page.</h5>
+
+		<h4 class="border-bottom pb-2 pt-4">Database information?</h4>
+		<h5 class="font-weight-normal">Due to hardware limitations, the project is currently using a JSON file as a database. This file can be used as a MongoDB collection on stronger machines, but since it is hosted on an entry level tiny server I preferred not to install mongodb. The database consists of around 600 smartphones and was last updated on April 2019.</h5>
+
+		<h4 class="border-bottom pb-2 pt-4">Which features are currently non functional / useless?</h4>
+		<h5 class="font-weight-normal">
+
+
+			<ul>
+				<li class="pb-2">The search bar on the top navbar supports autocomplete of all the smartphones, but once you click on a name nothing happens.</li>
+				<li class="pb-2">The log in / register functionality is there but it's extremely basic, even password validation is missing (you can register with empty username and pass hooray!)</li>
+				<li class="pb-2">The smartphones-database page is for demonstration purposes only, to show how ajax requests based on autocomplete suggestion dynamically change the content of the page.</li>
+				<li class="pb-2">The compare and details buttons on the results page do nothing at the moment.</li>
+			</ul>
+		</h5>
+
+	</div>
+
+	{include file='footer.html'}

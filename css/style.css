@@ -131,11 +131,7 @@ nav.navbar {
 	background-color: #343a40 !important;
 }
 
-nav a,
-nav a:hover {
-	color: white;
-	text-decoration: none;
-}
+
 
 nav input[type="search"],
 nav input[type="search"]:active,
