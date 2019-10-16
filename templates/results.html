@@ -9,24 +9,24 @@
 		<div class="progressBar progress px-0 mx-auto mt-4 font-weight-bold"> 
 
 			<div class="progress-bar bg-warning text-dark w-25 border-right" > 
-				Budget
+				{t}Budget{/t}
 			</div> 
 				
 			<div class="progress-bar bg-warning text-dark w-25 border-right"> 
-				Features
+				{t}Features{/t}
 			</div> 
 		
 			<div class="progress-bar bg-warning text-dark w-25 border-right"> 
-				Usage 
+				{t}Usage{/t} 
 			</div> 
 		
 			<div class="progress-bar bg-warning text-dark w-25"> 
-				Results 
+				{t}Results{/t}
 			</div> 
 
 		</div> 
 
-		<h2 class="mt-5 mb-5">Results</h2>
+		<h2 class="mt-5 mb-5">{t}Results{/t}</h2>
 
 		<div class="row mt-5 resultsContainer">
 
@@ -68,38 +68,38 @@
 					</a>
 				</div>
 
-				<h5 class="mt-4 mb-0">Summary</h5>
+				<h5 class="mt-4 mb-0">{t}Summary{/t}</h5>
 
 				<div class="col-12 d-flex flex-column mt-2 pl-3 text-left phoneSummary mb-4">
 
 					<div class="row d-inline-block text-success small {if !isset($P['best_battery'])}invisible{/if}">
 
-						<strong>Best battery out of 3</strong> 
+						<strong>{t}Best battery out of 3{/t}</strong> 
 
 					</div>
 					
 					<div class="row d-inline-block text-success small {if !isset($P['best_ppi'])}invisible{/if}">
 
-						<strong>Best PPI out of 3</strong> 
+						<strong>{t}Best PPI out of 3{/t}</strong> 
 
 					</div>
 
 					<div class="row d-inline-block text-danger small {if !isset($P['worst_battery'])}invisible{/if}">
 
-						<strong>Worst battery out of 3</strong> 
+						<strong>{t}Worst battery out of 3{/t}</strong> 
 
 					</div>
 					
 					<div class="row d-inline-block text-danger small {if !isset($P['worst_ppi'])}invisible{/if}">
 
-						<strong>Worst PPI out of 3</strong> 
+						<strong>{t}Worst PPI out of 3{/t}</strong> 
 
 					</div>
 
 					<div class="row phoneSummaryRow mt-2 d-inline-block">
 
 						<img class="mr-2" src="img/svg/display.svg" alt="display">
-						<strong>Display:</strong> {$P['display']['diagonal']}",
+						<strong>{t}Display{/t}:</strong> {$P['display']['diagonal']}",
 						{$P['display']['panel']},
 						{$P['display']['resolution']['0']}x{$P['display']['resolution']['1']}
 
@@ -109,7 +109,7 @@
 
 						<img class="mr-2" src="img/svg/processor.svg" alt="processor">
 					
-						<strong>Processor:</strong> {$P['system']['SoC']}
+						<strong>{t}Processor{/t}:</strong> {$P['system']['SoC']}
 
 					</div>
 
@@ -117,7 +117,7 @@
 
 						<img class="mr-2" src="img/svg/battery.svg" alt="battery">
 						
-						<strong>Battery:</strong> {$P['battery']['capacity']} mAh
+						<strong>{t}Battery{/t}:</strong> {$P['battery']['capacity']} mAh
 
 					</div>
 
@@ -125,7 +125,7 @@
 
 						<img class="mr-2" src="img/svg/rearcamera.svg" alt="rear camera">
 						
-						<strong>Rear Camera:</strong> {$P['rear_camera_MP']} MP
+						<strong>{t}Rear Camera{/t}:</strong> {$P['rear_camera_MP']} MP
 
 					</div>
 
@@ -133,14 +133,14 @@
 
 						<img class="mr-2" src="img/svg/frontcamera.svg" alt="front camera">
 						
-						<strong>Front Camera:</strong> {$P['front_camera_MP']} MP
+						<strong>{t}Front Camera{/t}:</strong> {$P['front_camera_MP']} MP
 
 					</div>
 
 					<div class="row phoneSummaryRow mt-2 d-inline-block">
 						<img class="mr-2" src="img/svg/storage.svg" alt="storage">
 						
-						<strong>Storage:</strong> {$P['summary']['capacities']}
+						<strong>{t}Storage{/t}:</strong> {$P['summary']['capacities']}
 
 					</div>
 
@@ -154,7 +154,7 @@
 					<div class="row phoneSummaryRow mt-2 d-inline-block">
 						<img class="mr-2" src="img/svg/os.svg" alt="os">
 						
-						<strong>OS:</strong> {$P['summary']['platform']}
+						<strong>{t}OS{/t}:</strong> {$P['summary']['platform']}
 
 					</div>
 
@@ -163,7 +163,7 @@
 						
 						<strong>
 							<a href="{$P['summary']['url']}" target="_blank">
-								Complete Specs
+								{t}Complete Specs{/t}
 							</a>
 						</strong>
 
@@ -173,7 +173,7 @@
 						
 						<img class="mr-2" src="img/svg/money.svg" alt="price">
 						
-						<strong>Cheapest Price:</strong> 
+						<strong>{t}Cheapest Price{/t}:</strong> 
 						<h5><strong>${$P['minPrice']}</strong> </h5>
 
 
@@ -183,13 +183,13 @@
 
 				<button class="btn btn-secondary">
 
-					Details
+					{t}Details{/t}
 
 				</button>
 
 				<button class="btn btn-warning">
 
-					Compare
+					{t}Compare{/t}
 
 				</button>
 

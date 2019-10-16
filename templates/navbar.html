@@ -36,12 +36,15 @@
 
 		<div class="col-xs-12 col-lg-6 mt-3 mt-lg-0 text-center">
 
+			<img src="img/svg/GR.svg" alt="el" width="30" class="mr-2 language">
+			<img src="img/svg/EN.svg" alt="en" width="30" class="mr-2 language">
+
 			<a href="faq.html" class="h4 mr-3 text-white mb-0 align-middle">FAQ</a>
 			{if isset($USER)}
 			<span class="text-white font-weight-bold mr-2">{$USER['username']}</span>
-			<span id="logout" class="text-warning">Logout</span>
+			<span id="logout" class="text-warning">{t}Logout{/t}</span>
 			{else}
-			<a href="login.html" class="btn btn-warning my-2 my-sm-0">Log in/Sign up</a>
+			<a href="login.html" class="btn btn-warning my-2 my-sm-0">{t}Log in/Sign up{/t}</a>
 			{/if}
 
 		</div>

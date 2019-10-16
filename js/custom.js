@@ -51,6 +51,20 @@ $(document).ready(function () {
 
 	});
 
+	// Change language
+	$('.navbar img.language').on('click', null, function () {
+
+		// Get selected language
+		var lang = $(this).attr('alt');
+
+		// Buggy solution but it works
+		if(window.location.href.includes("?"))
+			window.location.href = window.location.href.concat("&locale=" + lang);
+		else
+			window.location.href = window.location.href.concat("?locale=" + lang);
+
+	});
+
 	// Log out button
 	$('#logout').on('click', null, function () {
 

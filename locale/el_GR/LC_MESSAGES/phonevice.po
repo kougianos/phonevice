@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phonevice\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-15 16:23+0300\n"
+"POT-Creation-Date: 2019-10-16 09:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,3 +25,174 @@ msgstr "PhoneVice"
 
 msgid "PhoneVice Heading"
 msgstr "Κεφαλίδα PhoneVice"
+
+msgid "Budget"
+msgstr "Μπάτζετ"
+
+msgid "Features"
+msgstr "Χαρακτηριστικά"
+
+msgid "Usage"
+msgstr "Χρήση"
+
+msgid "Results"
+msgstr "Αποτελέσματα"
+
+msgid "Let us know how much you're going to spend"
+msgstr "Πόσα χρήματα διαθέτετε;"
+
+msgid "Home Page"
+msgstr "Αρχική σελίδα"
+
+msgid "Next step"
+msgstr "Επόμενο βήμα"
+
+msgid "Extra Features"
+msgstr "Επιπλέον χαρακτηριστικά"
+
+msgid "Select as many options as you like."
+msgstr "Επιλέξτε όσα θέλετε."
+
+msgid "Previous step"
+msgstr "Προηγούμενο βήμα"
+
+msgid "Next Step"
+msgstr "Επόμενο βήμα"
+
+msgid "This is your next smartphone. 3 clicks away."
+msgstr "Αυτό είναι το επομένο smartphone σου. 3 κλικ μακριά."
+
+msgid "START NOW!"
+msgstr "ΕΝΑΡΞΗ!"
+
+msgid "Smartphone database"
+msgstr "Βάση δεδομένων"
+
+msgid "Personal Recommendation"
+msgstr "Προσωποποιημένες προτάσεις"
+
+msgid "Save time"
+msgstr "Σώστε χρόνο"
+
+msgid "Logout"
+msgstr "Αποσύνδεση"
+
+msgid "Log in/Sign up"
+msgstr "Σύνδεση"
+
+msgid "Summary"
+msgstr "Περίληψη"
+
+msgid "Best battery out of 3"
+msgstr "Καλύτερη μπαταρία εκ των 3"
+
+msgid "Best PPI out of 3"
+msgstr "Καλύτερο PPI εκ των 3"
+
+msgid "Worst battery out of 3"
+msgstr "Χειρότερη μπαταρία εκ των 3"
+
+msgid "Worst PPI out of 3"
+msgstr "Χειρότερο PPI εκ των 3"
+
+msgid "Display"
+msgstr "Οθόνη"
+
+msgid "Processor"
+msgstr "Επεξεργαστής"
+
+msgid "Battery"
+msgstr "Μπαταρία"
+
+msgid "Rear Camera"
+msgstr "Κυρίως κάμερα"
+
+msgid "Front Camera"
+msgstr "Μπροστά κάμερα"
+
+msgid "Storage"
+msgstr "Χωρητικότητα"
+
+msgid "OS"
+msgstr "Λειτουργικό"
+
+msgid "Complete Specs"
+msgstr "Πλήρη χαρακτηριστικά"
+
+msgid "Cheapest Price"
+msgstr "Φθηνότερη τιμή"
+
+msgid "Details"
+msgstr "Λεπτομέρειες"
+
+msgid "Compare"
+msgstr "Σύγκριση"
+
+msgid "How will you be using your phone?"
+msgstr "Πως θα χρησιμοποιείτε το κινητό σας;"
+
+msgid "Basic Use"
+msgstr "Βασική χρήση"
+
+msgid "Everyday use. A little bit of everything. Social media, gaming, photos, video streaming etc. are things you will be doing on a daily basis with your phone, but none of them is really important for you."
+msgstr "Καθημερινή χρήση. Λίγο απ' όλα. Social media, gaming, φωτογραφίες, video streaming κλπ είναι πράγματα που θα κάνετε σε καθημερινή βάση με το κινητό σας, αλλά κανένα από αυτά δεν είναι τόσο σημαντικό."
+
+msgid "Finds phones with an all around good performance."
+msgstr "Βρίσκει κινητά με καλές επιδόσεις γενικά."
+
+msgid "Custom Use"
+msgstr "Ειδική χρήση"
+
+msgid "Are you a hardcore gamer? Do you like watching videos all day on your smartphone? Or are you a social media person who can't live without their favorite social apps?"
+msgstr "Είστε hardcore gamer; Σας αρέσει να βλέπετε βίντεο όλη μέρα στο κινητό σας; Η μήπως είστε από τους τύπους που σερφάρουν όλη μέρα στις αγαπημένες τους social media εφαρμογές;"
+
+msgid "Finds phones based on types of use."
+msgstr "Βρίσκει κινητά ανάλογα με τους τύπους χρήσης."
+
+msgid "Custom"
+msgstr "Ειδική"
+
+msgid "Social Media"
+msgstr "Social Media"
+
+msgid "Unimportant"
+msgstr "Αδιάφορο"
+
+msgid "Somewhat"
+msgstr "Κάπως"
+
+msgid "Relatively"
+msgstr "Σχετικά"
+
+msgid "Very"
+msgstr "Πολύ"
+
+msgid "Top"
+msgstr "Υπερβολικά"
+
+msgid "Importance slider"
+msgstr "Δείκτης βαρύτητας"
+
+msgid "Video Streaming"
+msgstr "Video Streaming"
+
+msgid "Gaming"
+msgstr "Gaming"
+
+msgid "Results!"
+msgstr "Αποτελέσματα!"
+
+msgid "Our database contains thousands of models to make sure we find the one that suits you best!"
+msgstr "Η βάση μας έχει χιλιάδες μοντέλα έτσι ώστε εσείς να βρείτε αυτό που σας ταιριάζει καλύτερα!"
+
+msgid "Our algorithm is designed to provide unique recommendations that depend on and fulfill your own needs."
+msgstr "Ο αλγόριθμος μας είναι σχεδιασμένος ώστε να παρέχει μοναδικές προτάσεις που εξαρτώνται και καλύπτουν τις δικές σας ανάγκες."
+
+msgid "Most people need days to find their favorite phone"
+msgstr "Οι περισσότεροι άνθρωποι χρειάζονται μέρες για να βρουν το αγαπημένο τους τηλέφωνο"
+
+msgid "We can help you find in a few minutes. It's 3 clicks away!"
+msgstr "Εμείς μπορούμε να σας βοηθήσουμε να το βρείτε σε λίγα λεπτά. Είναι 3 κλικ μακριά!"
+
+msgid "Basic"
+msgstr "Βασική"

@@ -1,9 +1,7 @@
 <?php
 
-// Validation array
-$validationGetArray = array("budget");
-
-if(!isset($_GET['budget']) || sizeof($_GET)>1 || array_diff(array_keys($_GET), $validationGetArray)!==array())
+// Validation
+if(!isset($_GET['budget']))
 	header("Location: index.html");
 
 // Strip unwanted characters 

@@ -42,7 +42,7 @@ a {
 img.leftArrow {
 	width: 25px;
 	position: absolute;
-	left: 10px;
+	left: 5px;
 }
 
 img.rightArrow {
@@ -120,10 +120,6 @@ img,
 	margin-bottom: 15px;
 }
 
-.secondaryBanner svg {
-	fill: #5e5e5e;
-}
-
 /* ----------------------------------------------------------------------- */
 /*navbar.html*/
 
@@ -131,7 +127,9 @@ nav.navbar {
 	background-color: #343a40 !important;
 }
 
-
+.navbar img.language {
+	cursor: pointer;
+}
 
 nav input[type="search"],
 nav input[type="search"]:active,
@@ -431,6 +429,19 @@ nav .navbar-nav .dropdown-menu {
 
 #usageChoiceContainer .col-sm-6 {
 	cursor: pointer;
+}
+
+#customUse div:last-child {
+	position: absolute;
+	bottom: 0;
+}
+
+@media (max-width: 575px) {
+
+	#customUse div:last-child {
+		position: initial;
+	}
+
 }
 
 /*---------------------------------------------------------------------------------------------*/

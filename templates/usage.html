@@ -9,24 +9,24 @@
 		<div class="progressBar progress px-0 mx-auto mt-4 font-weight-bold"> 
 
 			<div class="progress-bar bg-warning text-dark w-25 border-right" > 
-				Budget
+				{t}Budget{/t}
 			</div> 
 				
 			<div class="progress-bar bg-warning text-dark w-25 border-right"> 
-				Features
+				{t}Features{/t}
 			</div> 
 		
 			<div class="progress-bar bg-warning text-dark w-25 border-right"> 
-				Usage 
+				{t}Usage{/t} 
 			</div> 
 		
 			<div class="progress-bar bg-light text-black-50 w-25"> 
-				Results 
+				{t}Results{/t} 
 			</div> 
 
 		</div> 
 
-		<h2 class="mt-5 mb-3">How will you be using your phone?</h2>
+		<h2 class="mt-5 mb-3">{t}How will you be using your phone?{/t}</h2>
 
 		<div id="usageChoiceContainer" class="container mt-4">
 
@@ -35,7 +35,7 @@
 				<div id="basicUse" class="col-sm-6 mt-4 mb-4 border-right border-dark">
 
 					<div class="col-sm-12 mt-2 text-center">
-						<h4>Basic Use</h4>
+						<h4>{t}Basic Use{/t}</h4>
 					</div>
 
 					<div class="col-sm-12 usageSvgContainer bg-lightgrey rounded">
@@ -43,12 +43,12 @@
 					</div>
 
 					<div class="col-sm-12 p-4 mt-3">
-						Everyday use. A little bit of everything. Social media, gaming, photos, video streaming etc. are things you will be doing on a daily basis with your phone, but none of them is really important for you. <strong>Finds phones with an all around good performance.</strong>
+						{t}Everyday use. A little bit of everything. Social media, gaming, photos, video streaming etc. are things you will be doing on a daily basis with your phone, but none of them is really important for you.{/t} <strong>{t}Finds phones with an all around good performance.{/t}</strong>
 					</div>
 
 					<div class="col-sm-12 mt-5">
 						<form id="basicForm" action="results.html" method="get">
-							<button class="btn bg-lightgrey">Basic</button>
+							<button class="btn bg-lightgrey">{t}Basic{/t}</button>
 						</form>
 					</div>
 
@@ -57,7 +57,7 @@
 				<div id="customUse" class="col-sm-6 mt-4 mb-4">
 
 					<div class="col-sm-12 mt-2 text-center">
-						<h4>Custom Use</h4>
+						<h4>{t}Custom Use{/t}</h4>
 					</div>
 
 					<div class="col-sm-12 usageSvgContainer bg-warning rounded">
@@ -65,11 +65,11 @@
 					</div>
 
 					<div class="col-sm-12 p-4 mt-3">
-						Are you a hardcore gamer? Do you like watching videos all day on your smartphone? Or are you a social media person who can't live without their favorite social apps? <br><strong>Finds phones based on types of use.</strong>
+						{t}Are you a hardcore gamer? Do you like watching videos all day on your smartphone? Or are you a social media person who can't live without their favorite social apps?{/t} <br><strong>{t}Finds phones based on types of use.{/t}</strong>
 					</div>
 
 					<div class="col-sm-12 mt-5">
-						<button class="btn btn-warning" data-target="#usageForm">Custom</button>
+						<button class="btn btn-warning" data-target="#usageForm">{t}Custom{/t}</button>
 					</div>
 
 				</div>
@@ -83,24 +83,24 @@
 			<div class="row usageWrapper">
 
 				<div class="col-md-3">
-					<div class="col-12 mb-2 font-weight-bold">Social Networking</div>
+					<div class="col-12 mb-2 font-weight-bold">{t}Social Media{/t}</div>
 					<img src="img/phonewithapps.png" width="100" alt="phone with apps">
 				</div>
 
 				<div class="col-md-7 mt-4">
 					<div id="socialSlider"></div>
 					<div class="sliderSteps">
-						<span class="usageUnimportant usageSocialUnimportant">Unimportant</span>
-						<span class="usageSomewhat usageSocialSomewhat">Somewhat</span>
+						<span class="usageUnimportant usageSocialUnimportant">{t}Unimportant{/t}</span>
+						<span class="usageSomewhat usageSocialSomewhat">{t}Somewhat{/t}</span>
 						<span
-							class="usageRelatively usageSocialRelatively usageSocialSelected">Relatively</span>
-						<span class="usageVery usageSocialVery">Very</span>
-						<span class="usageTop usageSocialTop">Top</span>
+							class="usageRelatively usageSocialRelatively usageSocialSelected">{t}Relatively{/t}</span>
+						<span class="usageVery usageSocialVery">{t}Very{/t}</span>
+						<span class="usageTop usageSocialTop">{t}Top{/t}</span>
 					</div>
 				</div>
 
 				<div class="col-md-2 mt-4 text-secondary">
-					Importance slider
+					{t}Importance slider{/t}
 					<input type="hidden" id="usageSocialAmount" name="usageSocial">
 				</div>
 
@@ -109,24 +109,24 @@
 			<div class="row usageWrapper mt-5">
 
 				<div class="col-md-3">
-					<div class="col-12 mb-2 font-weight-bold">Video Streaming</div>
+					<div class="col-12 mb-2 font-weight-bold">{t}Video Streaming{/t}</div>
 					<img src="img/phoneinhand.png" width="100" alt="phone with apps">
 				</div>
 
 				<div class="col-md-7 mt-4">
 					<div id="videoSlider"></div>
 					<div class="sliderSteps">
-						<span class="usageUnimportant usageVideoUnimportant">Unimportant</span>
-						<span class="usageSomewhat usageVideoSomewhat">Somewhat</span>
+						<span class="usageUnimportant usageVideoUnimportant">{t}Unimportant{/t}</span>
+						<span class="usageSomewhat usageVideoSomewhat">{t}Somewhat{/t}</span>
 						<span
-							class="usageRelatively usageVideoRelatively usageVideoSelected">Relatively</span>
-						<span class="usageVery usageVideoVery">Very</span>
-						<span class="usageTop usageVideoTop">Top</span>
+							class="usageRelatively usageVideoRelatively usageVideoSelected">{t}Relatively{/t}</span>
+						<span class="usageVery usageVideoVery">{t}Very{/t}</span>
+						<span class="usageTop usageVideoTop">{t}Top{/t}</span>
 					</div>
 				</div>
 
 				<div class="col-md-2 mt-4 text-secondary">
-					Importance slider
+					{t}Importance slider{/t}
 					<input type="hidden" id="usageVideoAmount" name="usageVideo">
 				</div>
 
@@ -135,24 +135,24 @@
 			<div class="row usageWrapper mt-5">
 
 				<div class="col-md-3">
-					<div class="col-12 mb-2 font-weight-bold">Gaming</div>
+					<div class="col-12 mb-2 font-weight-bold">{t}Gaming{/t}</div>
 					<img src="img/phoneinbothhands.png" width="100" alt="phone with apps">
 				</div>
 
 				<div class="col-md-7 mt-4">
 					<div id="gamingSlider"></div>
 					<div class="sliderSteps">
-						<span class="usageUnimportant usageGamingUnimportant">Unimportant</span>
-						<span class="usageSomewhat usageGamingSomewhat">Somewhat</span>
+						<span class="usageUnimportant usageGamingUnimportant">{t}Unimportant{/t}</span>
+						<span class="usageSomewhat usageGamingSomewhat">{t}Somewhat{/t}</span>
 						<span
-							class="usageRelatively usageGamingRelatively usageGamingSelected">Relatively</span>
-						<span class="usageVery usageGamingVery">Very</span>
-						<span class="usageTop usageGamingTop">Top</span>
+							class="usageRelatively usageGamingRelatively usageGamingSelected">{t}Relatively{/t}</span>
+						<span class="usageVery usageGamingVery">{t}Very{/t}</span>
+						<span class="usageTop usageGamingTop">{t}Top{/t}</span>
 					</div>
 				</div>
 
 				<div class="col-md-2 mt-4 text-secondary">
-					Importance slider
+					{t}Importance slider{/t}
 					<input type="hidden" id="usageGamingAmount" name="usageGaming">
 				</div>
 
@@ -165,13 +165,13 @@
 			<button id="backButton" type="button" class="btn btn-dark mb-2 backButton">
 
 				<img src="img/svg/leftArrow.svg" alt="back" class="leftArrow">
-				Previous step
+				{t}Previous step{/t}
 
 			</button>
 
 			<button id="resultsButton" type="submit" disabled class="btn btn-warning mb-2 nextButton">
 
-				Results!
+			{t}Results!{/t}
 
 				<img src="img/svg/finishLine.svg" alt="back" class="rightArrow">
 
