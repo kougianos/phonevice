@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phonevice\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-16 09:38+0300\n"
+"POT-Creation-Date: 2019-10-17 13:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -196,3 +196,6 @@ msgstr "Εμείς μπορούμε να σας βοηθήσουμε να το �
 
 msgid "Basic"
 msgstr "Βασική"
+
+msgid "Interesting stats"
+msgstr "Ενδιαφέροντα στοιχεία"

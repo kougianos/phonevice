@@ -62,6 +62,9 @@ gettext("START NOW!");
 gettext("Smartphone database");
 
 /* ../templates/index.html */
+gettext("Interesting stats");
+
+/* ../templates/index.html */
 gettext("Our database contains thousands of models to make sure we find the one that suits you best!");
 
 /* ../templates/index.html */
@@ -147,6 +150,9 @@ gettext("Details");
 
 /* ../templates/results.html */
 gettext("Compare");
+
+/* ../templates/stats.html */
+gettext("Interesting stats");
 
 /* ../templates/usage.html */
 gettext("Budget");
