@@ -1,0 +1,40 @@
+{include file='header.html'}
+
+<body id="stats_page">
+
+	{include file='navbar.html'}
+
+	<div class="container-fluid mb-5 px-1">
+
+		<h2 class="mt-5 mb-3 text-center">{t}Interesting stats{/t}</h2>
+
+		<h5 class="text-danger ml-3">*Disclaimer: This page showcases the implementation of <a
+				href="https://www.chartjs.org/" target="_blank">chart.js</a> library using some simple
+			stats extracted from our database.</h5>
+		<h5 class="ml-3">Total phones: {$TOTALPHONES}</h5>
+
+		<div class="row">
+
+			<div class="col-lg-6 text-center">
+				This bar chart shows how many phones out of 690 have the following features
+				<div class="chart-container">
+					<canvas id="features" height="500"></canvas>
+				</div>
+
+			</div>
+
+			<div class="col-lg-6 text-center">
+				This pie chart shows the top 7 brands and how many phones each one has
+				<div class="chart-container">
+					<canvas id="brands" height="500"></canvas>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<input id="stats" type="hidden" data-brands='{$BRANDS}' data-features='{$FEATURES}'
+		data-totalphones='{$TOTALPHONES}'>
+
+	{include file='footer.html'}

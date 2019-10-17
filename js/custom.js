@@ -58,7 +58,7 @@ $(document).ready(function () {
 		var lang = $(this).attr('alt');
 
 		// Buggy solution but it works
-		if(window.location.href.includes("?"))
+		if (window.location.href.includes("?"))
 			window.location.href = window.location.href.concat("&locale=" + lang);
 		else
 			window.location.href = window.location.href.concat("?locale=" + lang);
@@ -509,6 +509,62 @@ $(document).ready(function () {
 
 				);
 
+			}
+		});
+
+	}
+
+	if (document.getElementById('stats_page')) {
+
+		// Get brands, features and totalphones
+		var brands = $('#stats').data('brands');
+		var features = $('#stats').data('features');
+		var totalphones = $('#stats').data('totalphones');
+
+		var ctx = document.getElementById('features').getContext('2d');
+		var chart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: Object.keys(features),
+				datasets: [{
+					label: 'Number of features',
+					backgroundColor: [
+						'red', 'green', 'aqua', 'blue', 'purple', 'orange', 'gray', 'black', 'greenyellow'
+					],
+					data: Object.values(features)
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				scales: {
+					yAxes: [{
+						display: true,
+						ticks: {
+							beginAtZero: true,
+							max: totalphones
+						}
+					}]
+				}
+			}
+		});
+
+		var ctx1 = document.getElementById('brands').getContext('2d');
+		var chart1 = new Chart(ctx1, {
+			type: 'pie',
+			data: {
+				labels: Object.keys(brands),
+				datasets: [{
+					label: 'Brands count',
+					backgroundColor: [
+						'red', 'green', 'aqua', 'blue', 'purple', 'orange', 'gray'
+					],
+					data: Object.values(brands)
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false
 			}
 		});
 

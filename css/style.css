@@ -517,3 +517,12 @@ nav .navbar-nav .dropdown-menu {
 	background-color: #dc3545;
 	opacity: 0.6;
 }
+
+/* ----------------------------------------------------------------------- */
+/*stats.html*/
+
+
+
+.chart-container {
+	max-width: 100%;
+}
