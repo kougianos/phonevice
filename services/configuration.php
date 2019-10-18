@@ -3,7 +3,7 @@ ini_set("session.cookie_secure", true);
 ini_set("session.cookie_httponly", true);
 session_name("PhoneVice");
 session_start();
-$debug = true;
+// $debug = true;
 require_once('./smarty/libs/Smarty.class.php');
 $smarty = new Smarty();
 

@@ -19,6 +19,10 @@
 
 	<link rel="icon" href="img/favicon.ico" sizes="16x16 24x24 32x32 64x64" type="image/png">
 
+	{assign var=FILEVERSION value=1}
+
+	{if isset($DEBUG)}
+
 	<link href="css/jquery-ui.min.css" rel="stylesheet">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
@@ -26,11 +30,16 @@
 	<script defer src="js/jquery.min.js"></script>
 	<script defer src="js/jquery-ui.min.js"></script>
 	<script defer src="js/bootstrap.bundle.min.js"></script>
+	<script defer src="js/chart.min.js"></script>
 	<script defer src="js/custom.js"></script>
-	{if isset($STATS)}
-	<script defer src="js/chart.js"></script>
-	{/if}
 
+	{else}
+
+	<link href="css/style.{$FILEVERSION}.min.css" rel="stylesheet">
+	<script defer src="js/custom.{$FILEVERSION}.min.js"></script>
+
+	{/if}
+	
 </head>
 
 {/strip}

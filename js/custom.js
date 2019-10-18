@@ -96,6 +96,9 @@ $(document).ready(function () {
 		}
 	});
 
+	// Set SVG as background on index page (breaks on minify that's why it's done in JS)
+	$(".jumbotronCustom").css("background-image", "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%235d5535' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23857029' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23ae8b1e' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23d6a612' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23ffc107' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E\")");
+
 	// Register JS
 	if (document.getElementById('register_page')) {
 

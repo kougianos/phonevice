@@ -1,5 +1,7 @@
 # Ignore whole smarty folder
-smarty/
+smarty/cache/*
+smarty/configs/*
+smarty/templates_c/*
 
 # Ignore personal credentials for Git actions
 data/credentials
